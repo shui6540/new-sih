@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import SchemeListPage from './pages/SchemeListPage';
+import Form from './components/Form';
 
 import CategoryGrid from './components/CategoryGrid';  // Import CategoryGrid
 
@@ -19,6 +20,7 @@ function App() {
           
           {/* Schemes List Page route */}
           <Route path="/schemes" element={<SchemeListPage />} />
+          <Route path="/apply" element={<Form />} />
         </Routes>
         <Footer />
       </div>

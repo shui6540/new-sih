@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css'; // Import Font Awesome CSS
 import CategoryGrid from '../components/CategoryGrid';
-
+import { Link } from 'react-router-dom';
 const Header = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -109,13 +109,11 @@ const Header = () => {
       {/* Add the App sections here */}
       <div>
         <HeroSection />
-       
-        <CategoryGrid />
-        <AboutSection />
-        <BenefitsSection />
+    
         <ApplySection />
+        <CategoryGrid />
        
-        <ContactSection />
+       
       </div>
     </div>
   );
@@ -128,7 +126,7 @@ function HeroSection() {
       <div style={contentStyle}>
         <h2>Empowering Your Future</h2>
         <p>Learn about the benefits and apply for the Government Scheme today.</p>
-        <a href="#apply" style={ctaButtonStyle}>Apply Now</a>
+        <Link to="/apply" style={ctaButtonStyle}>Apply Now</Link>
       </div>
     </section>
   );
@@ -146,21 +144,7 @@ function AboutSection() {
   );
 }
 
-// BenefitsSection component
-function BenefitsSection() {
-  return (
-    <section id="benefits" style={sectionStyle}>
-      <div style={contentStyle}>
-        <h2>Benefits</h2>
-        <ul type='none'>
-          <li>Benefit 1</li>
-          <li>Benefit 2</li>
-          <li>Benefit 3</li>
-        </ul>
-      </div>
-    </section>
-  );
-}
+
 
 // ApplySection component
 function ApplySection() {
@@ -175,21 +159,7 @@ function ApplySection() {
 }
 
 
-// ContactSection component
-function ContactSection() {
-  return (
-    <section id="contact" style={sectionStyle}>
-      <div style={contentStyle}>
-        <h2>Contact Us</h2>
-        <p>If you have any questions, feel free to reach out to us.</p>
-        <address>
-          <p>Email: <a href="mailto:info@government.gov">info@government.gov</a></p>
-          <p>Phone: +1 (234) 567-890</p>
-        </address>
-      </div>
-    </section>
-  );
-}
+
 
 const sectionStyle = {
   display: 'flex',
