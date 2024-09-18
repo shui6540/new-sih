@@ -22,7 +22,7 @@ function App() {
           <Route path="/schemes" element={<SchemeListPage />} />
           <Route path="/apply" element={<Form />} />
         </Routes>
-        <Footer />
+       
       </div>
     </Router>
   );

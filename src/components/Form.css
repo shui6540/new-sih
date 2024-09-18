@@ -1,57 +1,56 @@
 .form-container {
-    background-color: #1d1f23;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    text-align: center;
-  }
-  
-  h2 {
-    margin-bottom: 20px;
-  }
-  
-  .gender-selection button {
-    margin: 10px;
-    padding: 10px 20px;
-    border: 2px solid #fff;
-    background-color: transparent;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .gender-selection .active {
-    background-color: #00ff88;
-    color: #000;
-  }
-  
-  .age-selection select {
-    margin-top: 10px;
-    padding: 10px;
-    border: 2px solid #fff;
-    background-color: transparent;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .form-buttons {
-    margin-top: 20px;
-  }
-  
-  .next-button,
-  .reset-button {
-    background-color: #00ff88;
-    color: black;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 5px;
-  }
-  
-  .reset-button {
-    background-color: #ff4747;
-  }
-  
+  background-color: #1d1f23;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.gender-selection button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.gender-selection .active {
+  background-color: #00ff88;
+  color: #000;
+}
+
+.age-selection select {
+  margin-top: 10px;
+  padding: 10px;
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-buttons {
+  margin-top: 20px;
+}
+
+.next-button,
+.reset-button {
+  background-color: #00ff88;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.reset-button {
+  background-color: #ff4747;
+}

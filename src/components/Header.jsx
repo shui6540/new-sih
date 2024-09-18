@@ -98,95 +98,10 @@ const Header = () => {
         </nav>
       </header>
 
-      <main style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80vh' ,marginLeft:'30px'}}>
-        <img 
-          src="/slide.png" 
-          alt="Centered" 
-          style={{ maxWidth: '100%', maxHeight: '100%' }} 
-        />
-      </main>
-
-      {/* Add the App sections here */}
-      <div>
-        <HeroSection />
-    
-        <ApplySection />
-        <CategoryGrid />
-       
-       
-      </div>
+     
     </div>
   );
 };
 
-// HeroSection component
-function HeroSection() {
-  return (
-    <section id="hero" style={sectionStyle}>
-      <div style={contentStyle}>
-        <h2>Empowering Your Future</h2>
-        <p>Learn about the benefits and apply for the Government Scheme today.</p>
-        <Link to="/apply" style={ctaButtonStyle}>Apply Now</Link>
-      </div>
-    </section>
-  );
-}
-
-// AboutSection component
-function AboutSection() {
-  return (
-    <section id="about" style={sectionStyle}>
-      <div style={contentStyle}>
-        <h2>About the Scheme</h2>
-        <p>Detailed information about the government scheme, its purpose, and goals.</p>
-      </div>
-    </section>
-  );
-}
-
-
-
-// ApplySection component
-function ApplySection() {
-  return (
-    <section id="apply" style={sectionStyle}>
-      <div style={contentStyle}>
-        <h2>How to Apply</h2>
-        <p>Step-by-step instructions on how to apply for the scheme.</p>
-      </div>
-    </section>
-  );
-}
-
-
-
-
-const sectionStyle = {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  height: '500px', // Set desired height
-  width: '100%', // Full width
- // Optional background color
-  margin: '15px 0'
-};
-
-const contentStyle = {
-  textAlign: 'center',
-  width: '80%', // Adjust width as needed
-  maxWidth: '800px', // Adjust max width as needed
-  padding: '20px',
-  boxSizing: 'border-box'
-};
-
-const ctaButtonStyle = {
-  display: 'inline-block',
-  padding: '10px 20px',
-  marginTop: '20px',
-  backgroundColor: '#FFBF78',
-  color: 'white',
-  borderRadius: '20px',
-  textDecoration: 'none'
-};
 
 export default Header;
