@@ -15,7 +15,7 @@ const footerStyle = {
   justifyContent: 'center',
   alignItems: 'center',
   textAlign: 'center',
-  padding: '10px',
+  padding: '11px',
    // Optional: Background color for the footer
    // Optional: To keep the footer at the bottom of the page
   bottom: 0,
