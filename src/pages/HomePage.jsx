@@ -2,8 +2,10 @@ import React from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css'; // Import Font Awesome CSS
 import CategoryGrid from '../components/CategoryGrid';
 import { Link } from 'react-router-dom';
-import { LineChart, PieChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Pie, Cell } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import Footer from '../components/Footer'; // Import Footer component if not already imported
+import PopulationChart from '../components/PopulationChart'; // This import is for direct rendering, not for routing
+
 
 const data = [
   { year: 1901, population: 17552 },
@@ -20,8 +22,6 @@ const data = [
   { year: 2011, population: 172878 },
 ];
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8', '#f5f5f5', '#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#00FFFF', '#FF00FF'];
-
 const HomePage = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -34,46 +34,19 @@ const HomePage = () => {
         />
       </main>
 
-      {/* Charts and Sections */}
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-around', width: '100%' }}>
-          {/* Line Chart */}
-          <LineChart width={600} height={300} data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-            <XAxis dataKey="year" />
-            <YAxis />
-            <CartesianGrid stroke="#f5f5f5" />
-            <Tooltip />
-            <Legend />
-            <Line type="monotone" dataKey="population" stroke="#8884d8" />
-          </LineChart>
-
-          {/* Pie Chart */}
-          <PieChart width={400} height={400}>
-            <Pie
-              data={data}
-              dataKey="population"
-              nameKey="year"
-              cx="50%"
-              cy="50%"
-              outerRadius={80}
-              fill="#8884d8"
-              label
-            >
-              {data.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-              ))}
-            </Pie>
-            <Tooltip />
-            <Legend />
-          </PieChart>
-        </div>
-
-        {/* Add the App sections here */}
-        <div>
-          <HeroSection />
-          <ApplySection />
-          <CategoryGrid />
-        </div>
+      {/* Sections */}
+      <div>
+        <HeroSection />
+        <ApplySection />
+        <CategoryGrid />
+      </div>
+     
+      
+      {/* Link to PopulationChart page */}
+      <div style={{ textAlign: 'center', margin: '20px' }}>
+        <Link to="/population-chart" style={ctaButtonStyle}>
+          View Data Statiscts for Kerala
+        </Link>
       </div>
 
       {/* Footer component */}
@@ -95,18 +68,6 @@ function HeroSection() {
   );
 }
 
-// AboutSection component
-function AboutSection() {
-  return (
-    <section id="about" style={sectionStyle}>
-      <div style={contentStyle}>
-        <h2>About the Scheme</h2>
-        <p>Detailed information about the government scheme, its purpose, and goals.</p>
-      </div>
-    </section>
-  );
-}
-
 // ApplySection component
 function ApplySection() {
   return (
@@ -114,22 +75,6 @@ function ApplySection() {
       <div style={contentStyle}>
         <h2>How to Apply</h2>
         <p>Step-by-step instructions on how to apply for the scheme.</p>
-      </div>
-    </section>
-  );
-}
-
-// ContactSection component
-function ContactSection() {
-  return (
-    <section id="contact" style={sectionStyle}>
-      <div style={contentStyle}>
-        <h2>Contact Us</h2>
-        <p>If you have any questions, feel free to reach out to us.</p>
-        <address>
-          <p>Email: <a href="mailto:info@government.gov">info@government.gov</a></p>
-          <p>Phone: +1 (234) 567-890</p>
-        </address>
       </div>
     </section>
   );

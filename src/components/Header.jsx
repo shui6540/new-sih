@@ -27,7 +27,7 @@ const Header = () => {
   return (
     <div>
       <header>
-        <nav style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <nav style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' ,position:'sticky'}}>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <img 
               src="/image.png" 

@@ -23,8 +23,10 @@ const CategoryGrid = () => {
   const visibleCategories = categories.slice(0, 15); // Limit to 15 items for 5x3 grid
 
   return (
+    <div>
+       <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>Find Schemes Based on Categories</h1>
     <div className="container">
-      <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>Find Schemes Based on Categories</h1>
+     
       <div className="grid-container">
         {visibleCategories.map((category, index) => (
           <div key={index} className="category-card">
@@ -36,6 +38,7 @@ const CategoryGrid = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };

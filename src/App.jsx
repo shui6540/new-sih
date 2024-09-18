@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import SchemeListPage from './pages/SchemeListPage';
 import Form from './components/Form';
-
+import PopulationChart from './components/PopulationChart'
 import CategoryGrid from './components/CategoryGrid';  // Import CategoryGrid
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
           {/* Schemes List Page route */}
           <Route path="/schemes" element={<SchemeListPage />} />
           <Route path="/apply" element={<Form />} />
+          <Route path="/population-chart" element={<PopulationChart />} />
         </Routes>
        
       </div>
