@@ -1,0 +1,74 @@
+/* src/App.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+header {
+  background-color: #004080;
+  padding: 10px;
+  color: white;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li {
+  display: inline;
+}
+
+footer {
+  background-color: #004080;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.scheme-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.scheme-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+}
+/* Global styles */
+:root {
+  --background-color: white;
+  --text-color: black;
+}
+
+[data-theme="dark"] {
+  --background-color: #121212;
+  --text-color: #ffffff;
+}
+
+/* Apply the variables */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Additional theme-specific styles */
+[data-theme="dark"] button {
+  background-color: #444;
+  color: #fff;
+}
+
+[data-theme="light"] button {
+  background-color: #FFBF78;
+  color: white;
+}
+
+/* Add more customizations as needed for both themes */
+

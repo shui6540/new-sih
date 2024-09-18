@@ -1,0 +1,115 @@
+/* Header.css */
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  width: 150px;
+  margin-right: 10px;
+}
+
+.secondary-logo {
+  width: 300px;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-input {
+  padding: 10px 40px 10px 15px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 16px;
+  width: 300px;
+  text-align: center;
+  margin-left: 150px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #555;
+}
+
+.sign-in-button {
+  background-color: #FFBF78;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.language-toggle-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  margin-left: 30px;
+}
+
+.centered-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 100%;
+  margin: 15px 0;
+}
+
+.section-content {
+  text-align: center;
+  width: 80%;
+  max-width: 800px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #FFBF78;
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+}

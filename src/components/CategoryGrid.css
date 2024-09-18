@@ -1,0 +1,65 @@
+/* Grid layout for the categories */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns */
+  grid-template-rows: repeat(3, auto); /* 3 rows, automatically sized based on content */
+  gap: 15px; /* Spacing between the grid items */
+  padding: 20px; /* Padding around the grid */
+  background-color: #1e1e1e; /* Dark background */
+}
+
+/* Category cards styling */
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #252525; /* Darker background for cards */
+  padding: 10px; /* Reduced padding */
+  border-radius: 8px; /* Slightly smaller border radius */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Reduced box shadow */
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  color: white; /* White text on dark background */
+  max-width: 150px; /* Fixed maximum width */
+}
+
+/* Adjust the hover effect */
+.category-card:hover {
+  transform: translateY(-5px); /* Lift the card up slightly on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Category icon styling */
+.category-icon {
+  font-size: 36px; /* Smaller icons */
+  margin-bottom: 8px;
+}
+
+/* Category title styling */
+.category-info h4 {
+  margin: 0;
+  font-size: 1rem; /* Smaller font size */
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 4px;
+  color: #78E08F; /* Green color for category names */
+}
+
+/* Scheme count styling */
+.category-info p {
+  margin: 0;
+  font-size: 0.9rem; /* Smaller font size */
+  color: #7effb4; /* Lighter green for scheme counts */
+  text-align: center;
+}
+
+/* Customize the individual icon color if you want */
+.category-card:nth-child(1) .category-icon {
+  color: #5cb85c; /* Example: Green for Agriculture */
+}
+
+.category-card:nth-child(2) .category-icon {
+  color: #f39c12; /* Example: Orange for Banking */
+}
+
+/* Add more specific colors for each category as per your design */
