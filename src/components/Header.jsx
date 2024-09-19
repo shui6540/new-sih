@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import '@fortawesome/fontawesome-free/css/all.min.css'; // Import Font Awesome CSS
-import CategoryGrid from '../components/CategoryGrid';
-import { Link } from 'react-router-dom';
+
 const Header = () => {
+  const { t, i18n } = useTranslation(); // Import useTranslation hook for translations
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   // Check local storage for theme preference
@@ -24,19 +25,24 @@ const Header = () => {
     localStorage.setItem('theme', newTheme);
   };
 
+  // Change language function
+  const handleLanguageChange = (lang) => {
+    i18n.changeLanguage(lang);
+  };
+
   return (
     <div>
       <header>
-        <nav style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' ,position:'sticky'}}>
+        <nav style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'sticky' }}>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <img 
               src="/smj.png" 
-              alt="Logo" 
+              alt={t('logo_primary')} // Use translation keys for alt text
               style={{ width: '150px', marginRight: '10px' }} 
             />
             <img 
               src="/logo.png" 
-              alt="Secondary Logo" 
+              alt={t('logo_secondary')} // Use translation keys for alt text
               style={{ width: '300px' }}  
             />
           </div>
@@ -45,7 +51,7 @@ const Header = () => {
             <div style={{ position: 'relative' }}>
               <input
                 type="text"
-                placeholder="Enter scheme name to search..."
+                placeholder={t('search_placeholder')} // Use translation key for placeholder
                 style={{
                   padding: '10px 40px 10px 15px',
                   borderRadius: '30px',
@@ -54,7 +60,7 @@ const Header = () => {
                   fontSize: '16px',
                   width: '300px',
                   textAlign: 'center',
-                  marginLeft:'150px'
+                  marginLeft: '150px'
                 }}
               />
               <i 
@@ -81,12 +87,13 @@ const Header = () => {
                 display: 'flex',
                 alignItems: 'center'
               }}>
-                Sign In <i className="fas fa-arrow-right" style={{ marginLeft: '5px' }}></i>
+                {t('sign_in')} <i className="fas fa-arrow-right" style={{ marginLeft: '5px' }}></i>
               </button>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
                 <i className="fas fa-language"></i>
-                <span>Eng</span>
+                <span onClick={() => handleLanguageChange('en')} style={{ cursor: 'pointer' }}>Eng</span>
+                <span onClick={() => handleLanguageChange('hi')} style={{ cursor: 'pointer' }}>हिंदी</span>
               </div>
 
               {/* Theme Toggle Button */}
@@ -97,11 +104,8 @@ const Header = () => {
           </div>
         </nav>
       </header>
-
-     
     </div>
   );
 };
-
 
 export default Header;

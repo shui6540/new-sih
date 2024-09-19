@@ -47,6 +47,14 @@ h1 {
   display: flex;
   flex-direction: column;
 }
+.employment-status-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center buttons horizontally */
+  width: 60%; /* Width of the container */
+  margin: 0 auto;
+  gap: 10px; /* Center container */
+}
 
 .gender-selection, .age-selection, .form-group, .radio-group, .employment-status-selection, .category-options, .options {
   margin-bottom: 20px;
@@ -130,7 +138,6 @@ h1 {
 
 
 
-/* Form styling */
 form {
   margin-top: 20px;
 }

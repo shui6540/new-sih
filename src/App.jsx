@@ -6,7 +6,8 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import SchemeListPage from './pages/SchemeListPage';
 import Form from './components/Form';
-import PopulationChart from './components/PopulationChart'
+import PopulationChart from './components/PopulationChart';
+import './i18n';
 import CategoryGrid from './components/CategoryGrid';  // Import CategoryGrid
 
 function App() {
