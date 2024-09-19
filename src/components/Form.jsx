@@ -217,7 +217,7 @@ const MultiStepForm = () => {
 
         {step === 4 && (
           <div className="form-step">
-            <h3>You belong to...</h3>
+            <h>You belong to...</h>
             <div className="category-options">
               <button className={category === 'General' ? 'active' : ''} onClick={() => setCategory('General')}>
                 General

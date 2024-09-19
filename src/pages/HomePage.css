@@ -1,0 +1,9 @@
+.custom-carousel {
+    width: 80%; /* Adjust as needed */
+    margin: 0 auto; /* Center the carousel */
+  }
+  
+  .custom-carousel img {
+    width: 100%; /* Ensure images fit the carousel width */
+  }
+  

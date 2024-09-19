@@ -1,5 +1,3 @@
-/* Form.css */
-
 /* Container styling */
 .container {
   width: 80%;
@@ -47,35 +45,42 @@ h1 {
   display: flex;
   flex-direction: column;
 }
-.employment-status-selection {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center buttons horizontally */
-  width: 60%; /* Width of the container */
-  margin: 0 auto;
-  gap: 10px; /* Center container */
-}
 
-.gender-selection, .age-selection, .form-group, .radio-group, .employment-status-selection, .category-options, .options {
+.gender-selection,
+.age-selection,
+.form-group,
+.radio-group,
+.employment-status-selection,
+.category-options,
+.options {
   margin-bottom: 20px;
 }
 
-.gender-selection button, .employment-status-selection button, .category-options button, .options button {
+.gender-selection button,
+.employment-status-selection button,
+.category-options button,
+.options button {
   margin-right: 10px;
   padding: 10px 80px;
   border: 1px solid #ddd;
   border-radius: 4px;
   background-color: #f0f0f0;
   cursor: pointer;
-  color:black;
+  color: black;
 }
 
-.gender-selection button.active, .employment-status-selection button.active, .category-options button.active, .options button.active {
+.gender-selection button.active,
+.employment-status-selection button.active,
+.category-options button.active,
+.options button.active {
   background-color: #4caf50;
   color: #fff;
 }
 
-.gender-selection button:hover, .employment-status-selection button:hover, .category-options button:hover, .options button:hover {
+.gender-selection button:hover,
+.employment-status-selection button:hover,
+.category-options button:hover,
+.options button:hover {
   background-color: #ddd;
 }
 
@@ -99,19 +104,75 @@ h1 {
   margin-right: 10px;
 }
 
-/* Buttons styling */
+/* Employment Status Section - Vertical Alignment */
+.employment-status-selection {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 10px; /* Add space between buttons */
+}
 
-.previous-button, .next-button {
+.employment-status-selection button {
+  flex: 1; /* Ensure buttons take equal space */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  color: black;
+  width:400px;
+}
+
+.employment-status-selection button.active {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.employment-status-selection button:hover {
+  background-color: #ddd;
+}
+
+/* Category Options - Vertical Alignment */
+.category-options {
+  display: flex;
+  flex-direction: column; /* Stack category options vertically */
+  gap: 10px; /* Add space between buttons */
+}
+
+.category-options button {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  color: black;
+  width:400px;
+}
+
+.category-options button.active {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.category-options button:hover {
+  background-color: #ddd;
+}
+
+/* Buttons styling */
+.previous-button,
+.next-button {
   display: inline-block;
 }
+
 .form-buttons {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
-
-.next-button, .previous-button, .submit-button, .reset-button {
+.next-button,
+.previous-button,
+.submit-button,
+.reset-button {
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
@@ -128,15 +189,18 @@ h1 {
   background-color: red;
   color: #fff;
 }
-.first-button{
+
+.first-button {
   display: flex;
   justify-content: end;
 }
-.next-button:hover, .previous-button:hover, .submit-button:hover, .reset-button:hover {
+
+.next-button:hover,
+.previous-button:hover,
+.submit-button:hover,
+.reset-button:hover {
   opacity: 0.9;
 }
-
-
 
 form {
   margin-top: 20px;
@@ -147,4 +211,3 @@ form {
   text-align: center;
   margin-top: 20px;
 }
-

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, PieChart, Pie, Cell } from 'recharts';
 
 // Sample data for each district's gender distribution
@@ -60,18 +61,23 @@ const socioEconomicDevelopmentData = [
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
 const PopulationChart = () => {
-  // Scroll to the top when the component is rendered
+  const { t } = useTranslation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <div style={{ width: '80%', margin: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <h2>Population Distribution by Gender for Districts</h2>
+      <h2>{t('population_distribution')}</h2>
       <BarChart
         width={900}
         height={600}
-        data={data}
+        data={data.map(item => ({
+          name: t(`districts.${item.name}`),
+          males: item.males,
+          females: item.females
+        }))}
         layout="vertical"
         margin={{ top: 20, right: 30, left: 100, bottom: 20 }}
         barSize={20}
@@ -82,12 +88,12 @@ const PopulationChart = () => {
         <YAxis type="category" dataKey="name" width={150} />
         <Tooltip />
         <Legend />
-        <Bar dataKey="males" fill="#0088FE" />
-        <Bar dataKey="females" fill="#00C49F" />
+        <Bar dataKey="males" fill="#0088FE" name={t('legends.males')} />
+        <Bar dataKey="females" fill="#00C49F" name={t('legends.females')} />
       </BarChart>
 
       {/* Pie Chart for Age Distribution */}
-      <h2>Age Distribution (2011 Census)</h2>
+      <h2>{t('age_distribution')}</h2>
       <PieChart width={400} height={400}>
         <Pie
           data={ageData}
@@ -107,8 +113,8 @@ const PopulationChart = () => {
       </PieChart>
 
       {/* Separate Bar Charts for Each Development Category */}
-      <h2>Development</h2>
-      <h2>Agriculture Development</h2>
+      <h2>{t('development')}</h2>
+      <h2>{t('agriculture_development')}</h2>
       <BarChart
         width={600}
         height={300}
@@ -120,12 +126,12 @@ const PopulationChart = () => {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="districts" fill="#82ca9d" />
-        <Bar dataKey="area" fill="#8884d8" />
-        <Bar dataKey="population" fill="#ffc658" />
+        <Bar dataKey="districts" fill="#82ca9d" name={t('legends.districts')} />
+        <Bar dataKey="area" fill="#8884d8" name={t('legends.area')} />
+        <Bar dataKey="population" fill="#ffc658" name={t('legends.population')} />
       </BarChart>
 
-      <h2>Infrastructure Development</h2>
+      <h2>{t('infrastructure_development')}</h2>
       <BarChart
         width={600}
         height={300}
@@ -137,12 +143,12 @@ const PopulationChart = () => {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="districts" fill="#82ca9d" />
-        <Bar dataKey="area" fill="#8884d8" />
-        <Bar dataKey="population" fill="#ffc658" />
+        <Bar dataKey="districts" fill="#82ca9d" name={t('legends.districts')} />
+        <Bar dataKey="area" fill="#8884d8" name={t('legends.area')} />
+        <Bar dataKey="population" fill="#ffc658" name={t('legends.population')} />
       </BarChart>
 
-      <h2>Industrial Development</h2>
+      <h2>{t('industrial_development')}</h2>
       <BarChart
         width={600}
         height={300}
@@ -154,12 +160,12 @@ const PopulationChart = () => {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="districts" fill="#82ca9d" />
-        <Bar dataKey="area" fill="#8884d8" />
-        <Bar dataKey="population" fill="#ffc658" />
+        <Bar dataKey="districts" fill="#82ca9d" name={t('legends.districts')} />
+        <Bar dataKey="area" fill="#8884d8" name={t('legends.area')} />
+        <Bar dataKey="population" fill="#ffc658" name={t('legends.population')} />
       </BarChart>
 
-      <h2>Socio-economic Development</h2>
+      <h2>{t('socio_economic_development')}</h2>
       <BarChart
         width={600}
         height={300}
@@ -171,9 +177,9 @@ const PopulationChart = () => {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="districts" fill="#82ca9d" />
-        <Bar dataKey="area" fill="#8884d8" />
-        <Bar dataKey="population" fill="#ffc658" />
+        <Bar dataKey="districts" fill="#82ca9d" name={t('legends.districts')} />
+        <Bar dataKey="area" fill="#8884d8" name={t('legends.area')} />
+        <Bar dataKey="population" fill="#ffc658" name={t('legends.population')} />
       </BarChart>
     </div>
   );

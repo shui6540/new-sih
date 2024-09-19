@@ -15,9 +15,9 @@ const HomePage = () => {
       <LanguageSwitcher />
 
       {/* Main Image */}
-      <main style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80vh', marginLeft: '30px' }}>
+      <main style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80vh', marginLeft: '80px' }}>
         <img
-          src="/slide.png"
+          src="/2.png"
           alt={t('hero_title')}
           style={{ maxWidth: '100%', maxHeight: '100%' }}
         />
