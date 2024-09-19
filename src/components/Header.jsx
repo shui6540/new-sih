@@ -30,7 +30,7 @@ const Header = () => {
         <nav style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' ,position:'sticky'}}>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <img 
-              src="/image.png" 
+              src="/smj.png" 
               alt="Logo" 
               style={{ width: '150px', marginRight: '10px' }} 
             />

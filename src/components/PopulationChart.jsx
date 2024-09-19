@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, PieChart, Pie, Cell } from 'recharts';
 
 // Sample data for each district's gender distribution
@@ -60,6 +60,11 @@ const socioEconomicDevelopmentData = [
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
 const PopulationChart = () => {
+  // Scroll to the top when the component is rendered
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div style={{ width: '80%', margin: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <h2>Population Distribution by Gender for Districts</h2>
@@ -69,8 +74,8 @@ const PopulationChart = () => {
         data={data}
         layout="vertical"
         margin={{ top: 20, right: 30, left: 100, bottom: 20 }}
-        barSize={20} // Set the bar thickness
-        barCategoryGap={50} // Increase the space between bars for better separation
+        barSize={20}
+        barCategoryGap={50}
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis type="number" />
@@ -86,8 +91,8 @@ const PopulationChart = () => {
       <PieChart width={400} height={400}>
         <Pie
           data={ageData}
-          cx="50%" // Center the pie chart horizontally
-          cy="50%" // Center the pie chart vertically
+          cx="50%"
+          cy="50%"
           outerRadius={120}
           fill="#8884d8"
           dataKey="value"
@@ -98,7 +103,7 @@ const PopulationChart = () => {
           ))}
         </Pie>
         <Tooltip />
-        <Legend wrapperStyle={{ marginTop: 20 }} /> {/* Add space between chart and legend */}
+        <Legend wrapperStyle={{ marginTop: 20 }} />
       </PieChart>
 
       {/* Separate Bar Charts for Each Development Category */}

@@ -37,15 +37,15 @@ const HomePage = () => {
       {/* Sections */}
       <div>
         <HeroSection />
-        <ApplySection />
+        
         <CategoryGrid />
       </div>
      
       
       {/* Link to PopulationChart page */}
-      <div style={{ textAlign: 'center', margin: '20px' }}>
+      <div style={{ textAlign: 'center', marginTop: '0px',marginBottom:'50px' }}>
         <Link to="/population-chart" style={ctaButtonStyle}>
-          View Data Statiscts for Kerala
+          View Data Statistics for Kerala
         </Link>
       </div>
 
@@ -84,7 +84,7 @@ const sectionStyle = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  height: '500px', // Set desired height
+  height: '250px', // Set desired height
   width: '100%', // Full width
   margin: '15px 0'
 };

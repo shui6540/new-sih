@@ -24,7 +24,7 @@ const CategoryGrid = () => {
 
   return (
     <div>
-       <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>Find Schemes Based on Categories</h1>
+       <h1 style={{ textAlign: 'center', marginLeft: '30px' }}>Find Schemes Based on Categories</h1>
     <div className="container">
      
       <div className="grid-container">

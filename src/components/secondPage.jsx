@@ -1,87 +1,85 @@
-import React, { useState } from 'react';
-import './secondPage.css'; // Ensure this file is correctly located
+import React, { useState } from "react";
+import './secondPage.css'; // Assuming the CSS is in App.css file
 
-function App() {
-  const [state, setState] = useState('');
-  const [area, setArea] = useState('');
+const Form = () => {
+  const [state, setState] = useState("");
+  const [residence, setResidence] = useState("");
 
   const handleStateChange = (e) => {
     setState(e.target.value);
   };
 
-  const handleAreaChange = (e) => {
-    setArea(e.target.value);
+  const handleResidenceChange = (e) => {
+    setResidence(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!state || !residence) {
+      alert("Please select all options.");
+      return;
+    }
+    console.log("State:", state);
+    console.log("Residence:", residence);
+    // Proceed to the next step or display results
   };
 
   return (
-    <div className="container">
-      <h1>Help us find the best schemes for you</h1>
+    <div className="form-container">
       <div className="progress-bar">
-        <div className="progress-step active">
-          <span className="step-number">1</span>
-          <span className="step-text">State</span>
-        </div>
-        <div className="progress-step active">
-          <span className="step-number">2</span>
-          <span className="step-text">Area</span>
-        </div>
+        <span className="completed"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
 
-      <form className="form">
-        <div className="form-group">
-          <label htmlFor="state">Please select your state:</label>
-          <select id="state" value={state} onChange={handleStateChange}>
-            <option value="">--Select One--</option>
-            {/* Add your state options here */}
-            <option value="California">California</option>
-            <option value="Texas">Texas</option>
-            {/* Add more options as needed */}
-          </select>
-        </div>
-        <div className="form-group">
-          <label htmlFor="area">Please select your area of residence:</label>
-          <div className="radio-group">
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="state">Please select your state</label>
+        <select id="state" value={state} onChange={handleStateChange}>
+          <option value="">--Select One--</option>
+          <option value="State1">State 1</option>
+          <option value="State2">State 2</option>
+          <option value="State3">State 3</option>
+          {/* Add more states as needed */}
+        </select>
+
+        <div className="residence-selection">
+          <label>*Please select your area of residence</label>
+          <div className="residence-options">
             <input
               type="radio"
               id="urban"
-              name="area"
+              name="residence"
               value="Urban"
-              checked={area === 'Urban'}
-              onChange={handleAreaChange}
+              checked={residence === "Urban"}
+              onChange={handleResidenceChange}
             />
             <label htmlFor="urban">Urban</label>
-          </div>
-          <div className="radio-group">
+
             <input
               type="radio"
               id="rural"
-              name="area"
+              name="residence"
               value="Rural"
-              checked={area === 'Rural'}
-              onChange={handleAreaChange}
+              checked={residence === "Rural"}
+              onChange={handleResidenceChange}
             />
             <label htmlFor="rural">Rural</label>
           </div>
         </div>
-        <div className="form-buttons">
-          <button type="button" className="button skip">
+
+        <div className="buttons">
+          <button type="button" className="skip-btn" onClick={() => console.log("Skipping to Results")}>
             Skip to Results
           </button>
-          <button type="button" className="button next">
+          <button type="submit" className="next-btn">
             Next
-          </button>
-        </div>
-        <div className="reset-form">
-          <button type="button" className="button reset" onClick={() => {
-            setState('');
-            setArea('');
-          }}>
-            Reset Form
           </button>
         </div>
       </form>
     </div>
   );
-}
+};
 
-export default App;
+export default Form;
