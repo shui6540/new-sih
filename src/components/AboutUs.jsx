@@ -1,9 +1,9 @@
 import React from 'react';
-import './AboutUs.css';
+
 const AboutUs = () => {
   return (
     <div className="about-us">
-      {/* <h2>About SchemeHub</h2> */}
+      <h2>About SchemeHub</h2>
       <h2>SchemeHub : Simplifying Access to Government Welfare Programs</h2>
       <p>
         SchemeHub is a comprehensive and intuitive digital platform created to revolutionize the way citizens 
