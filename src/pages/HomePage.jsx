@@ -15,11 +15,11 @@ const HomePage = () => {
       <LanguageSwitcher />
 
       {/* Main Image */}
-      <main style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80vh', marginLeft: '80px' }}>
+      <main style={mainStyle}>
         <img
           src="/2.png"
           alt={t('hero_title')}
-          style={{ maxWidth: '100%', maxHeight: '100%' ,marginTop:'250px'}}
+          style={mainImageStyle}
         />
       </main>
 
@@ -57,19 +57,23 @@ function HeroSection() {
   );
 }
 
-// ApplySection component
-function ApplySection() {
-  const { t } = useTranslation();
+const mainStyle = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  width: '98.4vw', // Full screen width
+  height: '95vh', // Full screen height
+  overflow: 'hidden', // Prevent scrollbars
+  margin: '0', // Remove any default margins
+  padding: 0
+};
 
-  return (
-    <section id="apply" style={sectionStyle}>
-      <div style={contentStyle}>
-        <h2>{t('apply_section_title')}</h2>
-        <p>{t('apply_section_description')}</p>
-      </div>
-    </section>
-  );
-}
+const mainImageStyle = {
+  width: '100%', // Full width
+  height: 'auto', // Maintain aspect ratio
+  objectFit: 'cover', // Cover the entire width and height without distortion
+  marginTop: '100px' // Adjust margin-top if needed
+};
 
 const sectionStyle = {
   display: 'flex',
