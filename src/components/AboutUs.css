@@ -1,47 +1,57 @@
 .about-us {
-    /* max-width: 800px; */
     margin: 10px 20px;
-    padding: 40px; /* Adjust padding to create space for the image */
-    background-image: url('./logobg.png'); /* Add your image path here */
-    background-size: 800px 700px; /* Set specific width and height for the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-position: center; /* Centers the image */
+    padding: 40px;
+    background-image: url('./logobg.png');
+    background-size: 800px 700px;
+    background-repeat: no-repeat;
+    background-position: center;
     background-attachment: fixed;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-
-
-.about-us h2 {
+    position: relative; /* Needed to position the overlay */
+    z-index: 1;
+  }
+  
+  .about-us::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: -1; /* Ensure the overlay is behind the text */
+  }
+  
+  .about-us h2 {
     font-size: 2rem;
-    color: #fff; /* Change text color to white or adjust for contrast */
+    color: #fff;
     margin-bottom: 15px;
     text-align: center;
-}
-
-.about-us p {
+  }
+  
+  .about-us p {
     font-size: 1.1rem;
     line-height: 1.6;
-    color: #f9f9f9; /* Change text color to ensure visibility on background image */
+    color: #f9f9f9;
     margin-bottom: 20px;
-}
-
-.about-us p:last-child {
+  }
+  
+  .about-us p:last-child {
     margin-bottom: 0;
-}
-
-@media (max-width: 768px) {
+  }
+  
+  @media (max-width: 768px) {
     .about-us {
         padding: 15px;
     }
-
+  
     .about-us h2 {
         font-size: 1.75rem;
     }
-
+  
     .about-us p {
         font-size: 1rem;
     }
-}
+  }

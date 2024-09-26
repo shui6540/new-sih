@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './AboutUs.css';
+
 const AboutUs = () => {
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+  }, []); // The empty dependency array ensures this runs only once when the component mounts
+
   return (
     <div className="about-us">
-     
-      <h2>SchemeHub : Simplifying Access to Government Welfare Programs</h2>
+      <h2>SchemeHub: Simplifying Access to Government Welfare Programs</h2>
       <p>
         SchemeHub is a comprehensive and intuitive digital platform created to revolutionize the way citizens 
         access and benefit from government schemes. Our core purpose is to bridge the gap between welfare initiatives 
