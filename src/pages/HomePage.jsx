@@ -4,13 +4,14 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import CategoryGrid from '../components/CategoryGrid';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
-import LanguageSwitcher from '../components/LanguageSwitcher'; // Import the LanguageSwitcher component
+import LanguageSwitcher from '../components/LanguageSwitcher';
+import './HomePage.css';
 
 const HomePage = () => {
   const { t } = useTranslation();
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <div style={containerStyle}>
       {/* Language Switcher */}
       <LanguageSwitcher />
 
@@ -30,7 +31,7 @@ const HomePage = () => {
       </div>
 
       {/* Link to PopulationChart page */}
-      <div style={{ textAlign: 'center', marginTop: '0px', marginBottom: '50px' }}>
+      <div style={linkContainerStyle}>
         <Link to="/population-chart" style={ctaButtonStyle}>
           {t('view_data_statistics')}
         </Link>
@@ -57,22 +58,28 @@ function HeroSection() {
   );
 }
 
+const containerStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+};
+
 const mainStyle = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  width: '98.4vw', // Full screen width
-  height: '95vh', // Full screen height
+  width: '100%', // Full width
+  height: '95vh', // Full height
   overflow: 'hidden', // Prevent scrollbars
   margin: '0', // Remove any default margins
-  padding: 0
+  padding: 0,
 };
 
 const mainImageStyle = {
   width: '100%', // Full width
   height: 'auto', // Maintain aspect ratio
   objectFit: 'cover', // Cover the entire width and height without distortion
-  marginTop: '100px' // Adjust margin-top if needed
+  marginTop: '100px', // Adjust margin-top if needed
 };
 
 const sectionStyle = {
@@ -81,7 +88,7 @@ const sectionStyle = {
   alignItems: 'center',
   height: '250px',
   width: '100%',
-  margin: '15px 0'
+  margin: '15px 0',
 };
 
 const contentStyle = {
@@ -89,7 +96,7 @@ const contentStyle = {
   width: '80%',
   maxWidth: '800px',
   padding: '20px',
-  boxSizing: 'border-box'
+  boxSizing: 'border-box',
 };
 
 const ctaButtonStyle = {
@@ -99,7 +106,13 @@ const ctaButtonStyle = {
   backgroundColor: '#FFBF78',
   color: 'white',
   borderRadius: '20px',
-  textDecoration: 'none'
+  textDecoration: 'none',
+};
+
+const linkContainerStyle = {
+  textAlign: 'center',
+  marginTop: '0',
+  marginBottom: '50px',
 };
 
 export default HomePage;

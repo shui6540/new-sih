@@ -1,0 +1,108 @@
+.states-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .state-item {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #333;
+    position: relative;
+    transition: background-color 0.3s ease;
+  }
+  
+  .state-item:hover {
+    background-color: #333;
+  }
+  
+  .state-item h2 {
+    font-size: 20px;
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  .details-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    width: 100%;
+    padding: 0 20px;
+  }
+  
+  .state {
+    color: #5cb85c; /* Green for state */
+  }
+  
+  .central {
+    color: #d9534f; /* Red for central */
+  }
+  
+  .state-icon {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Add state-specific icons using background images */
+  
+  /* Icon for Andaman and Nicobar Islands */
+  .andaman-nicobar {
+    background-image: url('/path/to/icons/andaman-icon.svg');
+  }
+  
+  /* Icon for Andhra Pradesh */
+  .andhra-pradesh {
+    background-image: url('/path/to/icons/andhra-pradesh-icon.svg');
+  }
+  
+  /* Icon for Arunachal Pradesh */
+  .arunachal-pradesh {
+    background-image: url('/path/to/icons/arunachal-pradesh-icon.svg');
+  }
+  
+  /* Icon for Assam */
+  .assam {
+    background-image: url('/path/to/icons/assam-icon.svg');
+  }
+  
+  /* Icon for Bihar */
+  .bihar {
+    background-image: url('/path/to/icons/bihar-icon.svg');
+  }
+  
+  /* Icon for Chandigarh */
+  .chandigarh {
+    background-image: url('/path/to/icons/chandigarh-icon.svg');
+  }
+  
+  /* Icon for Goa */
+  .goa {
+    background-image: url('/path/to/icons/goa-icon.svg');
+  }
+  
+  /* Icon for Gujarat */
+  .gujarat {
+    background-image: url('/path/to/icons/gujarat-icon.svg');
+  }
+  
+  /* Icon for Jammu and Kashmir */
+  .jammu-kashmir {
+    background-image: url('/path/to/icons/jammu-kashmir-icon.svg');
+  }
+  
+  /* Icon for Jharkhand */
+  .jharkhand {
+    background-image: url('/path/to/icons/jharkhand-icon.svg');
+  }
+  
+  /* Add more state icons similarly... */
+  
