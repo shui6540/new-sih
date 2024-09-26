@@ -36,7 +36,7 @@ const AboutUs = () => {
       <p>{t('aboutUs.paragraph12')}</p>
 
       <h2>{t('aboutUs.heading7')}</h2>
-      <p>{t('aboutUs.finalParagraph')}</p>
+      <p>{t('aboutUs.paragraph13')}</p>
     </div>
   );
 };
