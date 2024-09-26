@@ -3,9 +3,10 @@
     margin: 10px 20px;
     padding: 40px; /* Adjust padding to create space for the image */
     background-image: url('./logobg.png'); /* Add your image path here */
-    background-size: 500px 500px; /* Set specific width and height for the image */
+    background-size: 800px 700px; /* Set specific width and height for the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-position: center; /* Centers the image */
+    background-attachment: fixed;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
