@@ -43,7 +43,7 @@
 
 .search-input {
   padding: 8px 35px 8px 15px; /* Adjusted padding */
-  border-radius: 25px; /* Adjusted border-radius */
+  border-radius: 8px; /* Adjusted border-radius */
   border: 1px solid #ccc;
   font-size: 14px; /* Slightly smaller font size */
   width: 250px; /* Adjusted width */
