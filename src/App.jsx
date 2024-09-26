@@ -8,6 +8,7 @@ import Form from './components/Form';
 import PopulationChart from './components/PopulationChart';
 import './i18n';
 import CategoryGrid from './components/CategoryGrid';  // Import CategoryGrid
+import AboutUs from './components/AboutUs';
 
 function App() {
   return (
