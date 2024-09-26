@@ -8,7 +8,7 @@ import Form from './components/Form';
 import PopulationChart from './components/PopulationChart';
 import './i18n';
 import CategoryGrid from './components/CategoryGrid';  // Import CategoryGrid
-
+import AboutUs from './components/AboutUs';
 function App() {
   return (
     <Router>
@@ -17,8 +17,7 @@ function App() {
         <Routes>
           {/* Home Page route */}
           <Route path="/" element={<HomePage />} />
-          
-          
+          <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/apply" element={<Form />} />
           <Route path="/population-chart" element={<PopulationChart />} />
         </Routes>
