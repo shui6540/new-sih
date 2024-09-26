@@ -9,10 +9,6 @@ import PopulationChart from './components/PopulationChart';
 import './i18n';
 import CategoryGrid from './components/CategoryGrid';  // Import CategoryGrid
 import AboutUs from './components/AboutUs';
-<<<<<<< HEAD
-=======
-
->>>>>>> 1dd456101f9e418cf107500b21cf439301c74831
 function App() {
   return (
     <Router>
