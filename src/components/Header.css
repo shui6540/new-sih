@@ -1,116 +1,103 @@
-/* Header.css */
+/* Header Styles */
+.header {
+  width: 100%;
+  background-color: #1f1f1f; /* Dark background */
+  padding: 0px 20px; /* Reduced padding to slim down */
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensure no overflow */
+}
 
+/* Added max-width to prevent content from spreading too far */
 .header-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping in case of smaller screens */
+  max-width: 1500px; /* Restricts content to a max width */
+  margin: 0 auto; /* Center the container */
 }
 
-.logo {
+/* Logo Styles */
+.logo-container {
   display: flex;
   align-items: center;
 }
 
-.logo-image {
-  width: 150px;
-  margin-right: 10px;
-  
+.right-logo {
+  width: 250px; /* Adjusted logo size */
 }
 
-.secondary-logo {
-  width: 300px;
+/* Centered Search Bar */
+.search-bar-container {
+  flex: 1; /* Take up available space */
+  display: flex;
+  justify-content: center; /* Center the search bar */
 }
 
-.search-container {
+.search-bar {
   position: relative;
 }
 
 .search-input {
-  padding: 10px 40px 10px 15px;
-  border-radius: 30px;
+  padding: 8px 35px 8px 15px; /* Adjusted padding */
+  border-radius: 25px; /* Adjusted border-radius */
   border: 1px solid #ccc;
-  outline: none;
-  font-size: 16px;
-  width: 300px;
-  text-align: center;
-  margin-left: 150px;
+  font-size: 14px; /* Slightly smaller font size */
+  width: 250px; /* Adjusted width */
+  background-color: #333;
+  color: #fff;
+}
+
+.search-input::placeholder {
+  color: #999;
 }
 
 .search-icon {
   position: absolute;
   top: 50%;
-  right: 15px;
+  right: 10px; /* Adjusted position */
   transform: translateY(-50%);
-  font-size: 16px;
-  color: #555;
+  color: #fff;
+}
+
+/* Right-aligned elements: Language Switch & Sign In */
+.right-elements {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Adjust gap between language switch and sign-in button */
+  margin-right: 15px; /* Added margin-right to shift everything slightly left */
+}
+
+.language-switch {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* Reduced gap */
+  margin-right: 10px; /* Added margin to shift it closer to the Sign-In button */
+}
+
+.language-option {
+  cursor: pointer;
+  color: #fff;
+  font-size: 14px; /* Slightly smaller font */
 }
 
 .sign-in-button {
   background-color: #FFBF78;
-  color: white;
+  color: #fff;
   border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
+  padding: 8px 15px; /* Reduced padding */
+  border-radius: 15px; /* Reduced border-radius */
   cursor: pointer;
   display: flex;
   align-items: center;
+  white-space: nowrap; /* Prevents text from wrapping */
+  gap: 0.1px;
 }
 
-.language-toggle-button {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #007bff;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-.theme-toggle {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.main-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
-  margin-left: 30px;
-}
-
-.centered-image {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 500px;
-  width: 100%;
-  margin: 15px 0;
-}
-
-.section-content {
-  text-align: center;
-  width: 80%;
-  max-width: 800px;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.cta-button {
-  display: inline-block;
-  padding: 10px 20px;
-  margin-top: 20px;
-  background-color: #FFBF78;
-  color: white;
-  border-radius: 20px;
-  text-decoration: none;
+/* Ensure consistent spacing for the icon */
+.sign-in-button i {
+  margin-left: 5px;
 }

@@ -19,7 +19,7 @@ const HomePage = () => {
         <img
           src="/2.png"
           alt={t('hero_title')}
-          style={{ maxWidth: '100%', maxHeight: '100%' }}
+          style={{ maxWidth: '100%', maxHeight: '100%' ,marginTop:'250px'}}
         />
       </main>
 
