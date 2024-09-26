@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./IndianTabs.css";
+import Kerala from "./Kerala"; // Import the PopulationChart component
 
 const statesAndUTs = [
   "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", 
@@ -30,6 +31,8 @@ const Tabs = () => {
       <div className="content">
         <h2>{activeTab}</h2>
         <p>Details about {activeTab}...</p>
+
+        {activeTab === "Kerala" && <Kerala />} {/* Render the PopulationChart for Kerala */}
       </div>
     </div>
   );
