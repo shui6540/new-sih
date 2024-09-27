@@ -1,92 +1,71 @@
-/* Footer Container Styles */
-.footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* Page layout and general styling */
+.centralMinistriesPage {
   text-align: center;
-  padding: 10px; /* Reduced padding */
-  background-color: #1e1e1e;
-  color: #f1f1f1;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  border-top: 1px solid #555;
-  overflow: hidden; /* Prevent overflow */
-  box-sizing: border-box; /* Include padding in width calculations */
+  padding: 20px;
+  background-color: #2b2b2b; /* Background color for page */
+  color: white;
 }
 
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  width: 100%; /* Full width */
-  max-width: 1200px; /* Adjusted max-width for smaller size */
-  flex-wrap: wrap;
-  padding: 15px 0; /* Reduced padding */
-  box-sizing: border-box; /* Include padding in width calculations */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: white;
 }
 
-.footer-section {
-  flex: 1;
-  margin: 5px; /* Reduced margin */
-  min-width: 150px; /* Adjusted minimum width */
-  box-sizing: border-box; /* Include padding in width calculations */
+/* Grid container for the ministry cards */
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 20px;
+  padding: 20px;
 }
 
-.footer-section h4 {
-  font-size: 1em; /* Smaller font size */
-  margin-bottom: 8px; /* Reduced margin */
-  color: #f0f0f0;
+/* Individual ministry card styling */
+.ministryCard {
+  background-color: #1e1e1e; /* Card background color */
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.footer-section p,
-.footer-links li,
-.footer-social li {
-  color: #bbb;
-  font-size: 0.9em; /* Adjusted font size for readability */
+/* Hover effect for cards */
+.ministryCard:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  background-color: #333; /* Darker background on hover */
+  cursor: pointer;
 }
 
-.footer-links,
-.footer-social {
-  list-style-type: none;
-  padding: 0;
+/* Heading inside each ministry card */
+.ministryCard h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
 }
 
-.footer-links li,
-.footer-social li {
-  margin: 5px; /* Reduced margin */
+/* Text inside the card for schemes */
+.ministryCard p {
+  font-size: 1rem;
+  margin: 0;
+  color: #9ad3bc; /* Light green for schemes count */
 }
-
-.footer-links li a,
-.footer-social li a {
-  text-decoration: none;
-  color: #ddd;
-  transition: color 0.3s ease;
+.category-icon {
+  font-size: 37px; /* Increased icon size */
+  margin-bottom: 12px; /* Space between icon and text */
+  color: #78E08F; /* Default icon color, matches green for consistency */
 }
-
-.footer-links li a:hover,
-.footer-social li a:hover {
-  color: #fff;
-}
-
-.footer-copyRight {
-  margin-top: 15px; /* Reduced margin */
-  font-size: 0.8em; /* Smaller font size */
-  color: #888;
-}
-
-.footer-social {
-  margin-left: auto;
-}
-
-/* Responsive styles for smaller screens */
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
+/* Media query for small screens */
+@media (max-width: 600px) {
+  .ministryCard {
+      padding: 15px; /* Reduced padding on smaller screens */
   }
 
-  .footer-section {
-    text-align: center;
-    margin: 10px 0; /* Adjusted margin for better spacing on small screens */
+  .ministryCard h4 {
+      font-size: 1rem; /* Smaller font size for heading */
+  }
+
+  .ministryCard p {
+      font-size: 0.9rem; /* Smaller font size for schemes text */
   }
 }
