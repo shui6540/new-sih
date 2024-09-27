@@ -8,6 +8,8 @@ import PopulationChart from './components/PopulationChart';
 import './i18n';
 import AboutUs from './components/AboutUs';
 import LoginPage from './pages/LoginPage';
+import StatesUTsPage from './components/StatesUTsPage';
+import CentralMinistriesPage from './components/CentralMinistriesPage';
 function App() {
   return (
     <Router>

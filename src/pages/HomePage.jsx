@@ -4,35 +4,31 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import CategoryGrid from '../components/CategoryGrid';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
-import LanguageSwitcher from '../components/LanguageSwitcher'; // Import the LanguageSwitcher component
-import './HomePage.css'; // Import the CSS file
+import LanguageSwitcher from '../components/LanguageSwitcher';
+import TabComponent from '../components/TabComponent'; // Import the TabComponent
+import './HomePage.css';
 
 const HomePage = () => {
   const { t } = useTranslation();
-  const images = ['/2.png', '/4.png', '/6.png']; // Add your image paths here
+  const images = ['/2.png', '/4.png', '/6.png'];
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Automatically change the image every 2 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
-    }, 2000); // Change image every 2 seconds
-    return () => clearInterval(interval); // Clean up the interval on component unmount
+    }, 5000);
+    return () => clearInterval(interval);
   }, [images.length]);
 
-  // Scroll to the top on component mount
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <div className="homePage">
-      {/* Language Switcher */}
       <LanguageSwitcher />
-
-      {/* Main Image Slideshow */}
       <main className="mainStyle">
         <img
           src={images[currentIndex]}
@@ -41,20 +37,20 @@ const HomePage = () => {
         />
       </main>
 
-      {/* Sections */}
+      {/* Add the TabComponent here */}
+      <TabComponent />
+
       <div>
         <HeroSection />
         <CategoryGrid />
       </div>
 
-      {/* Link to PopulationChart page */}
       <div style={{ textAlign: 'center', marginTop: '0px', marginBottom: '50px' }}>
         <Link to="/population-chart" className="ctaButtonStyle">
           {t('view_data_statistics')}
         </Link>
       </div>
 
-      {/* Footer component */}
       <Footer />
     </div>
   );

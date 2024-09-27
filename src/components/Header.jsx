@@ -47,7 +47,7 @@ const Header = () => {
 
           <Link to="/login">
             <button className="sign-in-button">
-              {t('Sign In')} <i className="fas fa-arrow-right"></i>
+              {t('Log In')} <i className="fas fa-arrow-right"></i>
             </button>
           </Link>
         </div>

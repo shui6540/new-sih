@@ -1,135 +1,125 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './LoginPage.css'; // Import your CSS file for styling
+import './LoginPage.css'; // Create a CSS file for styles
 
 const LoginPage = () => {
-  const [companyName, setCompanyName] = useState('');
-  const [contactNumber, setContactNumber] = useState('');
-  const [email, setEmail] = useState('');
-  const [confirmEmail, setConfirmEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [rememberMe, setRememberMe] = useState(false);
-  const navigate = useNavigate();
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [formData, setFormData] = useState({
+    username: '',
+    contactNumber: '',
+    email: '',
+    confirmEmail: '',
+    password: '',
+    confirmPassword: '',
+    rememberMe: false,
+  });
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSignUp = (e) => {
-    e.preventDefault(); // Prevent form from refreshing the page
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value,
+    }));
+  };
+
+  const authenticateUser = async (data) => {
+    // Implement actual authentication logic (replace with actual API calls)
+    // For now, we can simulate an API call that checks for existing users.
     
-    // Basic validation
-    if (!companyName || !contactNumber || !email || !confirmEmail || !password || !confirmPassword) {
-      alert('Please fill in all required fields.');
+    // Example of a fake user database (to be replaced with actual logic)
+    const users = [
+      { username: 'user1', password: 'password123' },
+      { username: 'admin1', password: 'adminpass123' },
+    ];
+
+    const user = users.find(
+      (u) => u.username === data.username && u.password === data.password
+    );
+
+    return user !== undefined;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setErrorMessage(''); // Reset error message
+
+    // Check if password and confirm password match
+    if (formData.password !== formData.confirmPassword) {
+      setErrorMessage('Passwords do not match. Please try again.');
       return;
     }
 
-    // Email and password confirmation checks
-    if (email !== confirmEmail) {
-      alert('Emails do not match.');
-      return;
+    // Authenticate user
+    const isAuthenticated = await authenticateUser(formData);
+    if (isAuthenticated) {
+      // Success: redirect or show success message
+      alert(`Welcome ${formData.username}!`);
+      // You can implement further redirection or state updates here
+    } else {
+      setErrorMessage('Invalid credentials, please try again.');
     }
-
-    if (password !== confirmPassword) {
-      alert('Passwords do not match.');
-      return;
-    }
-
-    // Placeholder for sign-up logic, such as an API call
-    // Add actual sign-up logic here
-
-    // Redirect to dashboard (or another page) after sign-up
-    navigate('/dashboard'); // Replace with your actual dashboard route
   };
 
   return (
-    <div className="loginPage">
-      <form onSubmit={handleSignUp}>
-        <h2>Sign Up to Use Our Calculator</h2>
-
-        {/* Company Name */}
-        <div className="inputField">
-          <label htmlFor="companyName">Username</label>
-          <input
-            type="text"
-            id="companyName"
-            value={companyName}
-            onChange={(e) => setCompanyName(e.target.value)}
-            placeholder="Enter your user name"
-            required
-          />
-        </div>
-
-        {/* Contact Number */}
-        <div className="inputField">
-          <label htmlFor="contactNumber">Contact Number</label>
-          <input
-            type="text"
-            id="contactNumber"
-            value={contactNumber}
-            onChange={(e) => setContactNumber(e.target.value)}
-            placeholder="Enter your contact number"
-            required
-          />
-        </div>
-
-        {/* Email */}
-        <div className="inputField">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your email"
-            required
-          />
-        </div>
-
-       
-
-        {/* Password */}
-        <div className="inputField">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Enter your password"
-            required
-          />
-        </div>
-
-        {/* Confirm Password */}
-        <div className="inputField">
-          <label htmlFor="confirmPassword">Confirm Password</label>
-          <input
-            type="password"
-            id="confirmPassword"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            placeholder="Confirm your password"
-            required
-          />
-        </div>
-
-        {/* Remember Me Checkbox */}
-        <div className="rememberMe">
+    <div className="form-container">
+      <h2>{isAdmin ? 'Admin Login' : 'User Login'}</h2>
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          value={formData.username}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="text"
+          name="contactNumber"
+          placeholder="Contact Number"
+          value={formData.contactNumber}
+          onChange={handleChange}
+          required={!isAdmin} // Make contact number optional for admin
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={formData.email}
+          onChange={handleChange}
+          required={!isAdmin} // Make email optional for admin
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={formData.password}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="password"
+          name="confirmPassword"
+          placeholder="Confirm Password"
+          value={formData.confirmPassword}
+          onChange={handleChange}
+          required={isAdmin} // Make confirm password required for admin
+        />
+        <div className="checkbox-container">
           <input
             type="checkbox"
-            id="rememberMe"
-            checked={rememberMe}
-            onChange={(e) => setRememberMe(e.target.checked)}
+            name="rememberMe"
+            checked={formData.rememberMe}
+            onChange={handleChange}
           />
-          <label htmlFor="rememberMe">Remember Me</label>
+          <label>Remember Me</label>
         </div>
-
-        {/* Sign Up Button */}
-        <button type="submit" className="signUpButton">Sign Up</button>
-
-        {/* Link to login */}
-        <p className="loginLink">
-          Already registered? <a href="/login">Login here</a>
-        </p>
+        <button type="submit" className="sign-up-button">Log In</button>
       </form>
+      <p>
+        Switch to {isAdmin ? 'User Login' : 'Admin Login'}{' '}
+        <a href="#" onClick={() => setIsAdmin(!isAdmin)}>here</a>
+      </p>
     </div>
   );
 };
