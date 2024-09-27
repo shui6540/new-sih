@@ -5,21 +5,22 @@ import CategoryGrid from '../components/CategoryGrid';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import LanguageSwitcher from '../components/LanguageSwitcher'; // Import the LanguageSwitcher component
+import './HomePage.css'; // Import the CSS file
 
 const HomePage = () => {
   const { t } = useTranslation();
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <div className="homePage">
       {/* Language Switcher */}
       <LanguageSwitcher />
 
       {/* Main Image */}
-      <main style={mainStyle}>
+      <main className="mainStyle">
         <img
           src="/2.png"
           alt={t('hero_title')}
-          style={mainImageStyle}
+          className="mainImageStyle"
         />
       </main>
 
@@ -31,7 +32,7 @@ const HomePage = () => {
 
       {/* Link to PopulationChart page */}
       <div style={{ textAlign: 'center', marginTop: '0px', marginBottom: '50px' }}>
-        <Link to="/population-chart" style={ctaButtonStyle}>
+        <Link to="/population-chart" className="ctaButtonStyle">
           {t('view_data_statistics')}
         </Link>
       </div>
@@ -47,59 +48,14 @@ function HeroSection() {
   const { t } = useTranslation();
 
   return (
-    <section id="hero" style={sectionStyle}>
-      <div style={contentStyle}>
+    <section id="hero" className="sectionStyle">
+      <div className="contentStyle">
         <h2>{t('hero_title')}</h2>
         <p>{t('hero_description')}</p>
-        <Link to="/apply" style={ctaButtonStyle}>{t('cta_button_apply')}</Link>
+        <Link to="/apply" className="ctaButtonStyle">{t('cta_button_apply')}</Link>
       </div>
     </section>
   );
 }
-
-const mainStyle = {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  width: '98.4vw', // Full screen width
-  height: '95vh', // Full screen height
-  overflow: 'hidden', // Prevent scrollbars
-  margin: '0', // Remove any default margins
-  padding: 0
-};
-
-const mainImageStyle = {
-  width: '100%', // Full width
-  height: 'auto', // Maintain aspect ratio
-  objectFit: 'cover', // Cover the entire width and height without distortion
-  marginTop: '100px' // Adjust margin-top if needed
-};
-
-const sectionStyle = {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  height: '250px',
-  width: '100%',
-  margin: '15px 0'
-};
-
-const contentStyle = {
-  textAlign: 'center',
-  width: '80%',
-  maxWidth: '800px',
-  padding: '20px',
-  boxSizing: 'border-box'
-};
-
-const ctaButtonStyle = {
-  display: 'inline-block',
-  padding: '10px 20px',
-  marginTop: '20px',
-  backgroundColor: '#FFBF78',
-  color: 'white',
-  borderRadius: '20px',
-  textDecoration: 'none'
-};
 
 export default HomePage;
