@@ -12,15 +12,20 @@ const HomePage = () => {
   const images = ['/2.png', '/4.png', '/6.png']; // Add your image paths here
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Automatically change the image every 3 seconds
+  // Automatically change the image every 2 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
-    }, 2000); // Change image every 3 seconds
+    }, 2000); // Change image every 2 seconds
     return () => clearInterval(interval); // Clean up the interval on component unmount
   }, [images.length]);
+
+  // Scroll to the top on component mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="homePage">
