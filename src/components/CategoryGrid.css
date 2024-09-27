@@ -7,8 +7,7 @@
   padding: 20px; /* Padding around the grid */
   background-color: #1e1e1e; /* Dark background */
   overflow: hidden;
-  margin-left: -150px;
- 
+  margin-left: -150px; /* Default margin for larger screens */
 }
 
 /* Category cards styling */
@@ -66,3 +65,20 @@
 }
 
 /* Add more specific colors for each category as per your design */
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    grid-template-rows: auto; /* Automatically sized rows */
+    margin-left: 0; /* Remove margin-left on smaller screens */
+  }
+
+  .category-card {
+    max-width: 100%; /* Full width for cards on smaller screens */
+  }
+
+  .category-info h4, .category-info p {
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+  }
+}
