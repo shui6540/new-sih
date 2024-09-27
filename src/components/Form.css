@@ -8,6 +8,7 @@
   border-radius: 8px;
   background-color: black;
   margin-left: 400px;
+  
 }
 
 /* Header styling */
@@ -40,7 +41,7 @@ h1 {
   font-weight: bold;
 }
 
-/* Form step styling */
+
 .form-step {
   display: flex;
   flex-direction: column;
