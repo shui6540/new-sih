@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import CategoryGrid from '../components/CategoryGrid';
@@ -9,16 +9,28 @@ import './HomePage.css'; // Import the CSS file
 
 const HomePage = () => {
   const { t } = useTranslation();
+  const images = ['/2.png', '/4.png', '/6.png']; // Add your image paths here
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Automatically change the image every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 2000); // Change image every 3 seconds
+    return () => clearInterval(interval); // Clean up the interval on component unmount
+  }, [images.length]);
 
   return (
     <div className="homePage">
       {/* Language Switcher */}
       <LanguageSwitcher />
 
-      {/* Main Image */}
+      {/* Main Image Slideshow */}
       <main className="mainStyle">
         <img
-          src="/2.png"
+          src={images[currentIndex]}
           alt={t('hero_title')}
           className="mainImageStyle"
         />
