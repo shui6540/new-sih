@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 30px;
+  padding: 10px; /* Reduced padding */
   background-color: #1e1e1e;
   color: #f1f1f1;
   position: relative;
@@ -19,22 +19,22 @@
   display: flex;
   justify-content: space-between;
   width: 100%; /* Full width */
-  max-width: 1500px;
+  max-width: 1200px; /* Adjusted max-width for smaller size */
   flex-wrap: wrap;
-  padding: 30px 0;
+  padding: 15px 0; /* Reduced padding */
   box-sizing: border-box; /* Include padding in width calculations */
 }
 
 .footer-section {
   flex: 1;
-  margin: 10px;
-  min-width: 200px;
+  margin: 5px; /* Reduced margin */
+  min-width: 150px; /* Adjusted minimum width */
   box-sizing: border-box; /* Include padding in width calculations */
 }
 
 .footer-section h4 {
-  font-size: 1.2em;
-  margin-bottom: 10px;
+  font-size: 1em; /* Smaller font size */
+  margin-bottom: 8px; /* Reduced margin */
   color: #f0f0f0;
 }
 
@@ -42,6 +42,7 @@
 .footer-links li,
 .footer-social li {
   color: #bbb;
+  font-size: 0.9em; /* Adjusted font size for readability */
 }
 
 .footer-links,
@@ -52,7 +53,7 @@
 
 .footer-links li,
 .footer-social li {
-  margin: 8px;
+  margin: 5px; /* Reduced margin */
 }
 
 .footer-links li a,
@@ -68,8 +69,8 @@
 }
 
 .footer-copyRight {
-  margin-top: 25px;
-  font-size: 0.9em;
+  margin-top: 15px; /* Reduced margin */
+  font-size: 0.8em; /* Smaller font size */
   color: #888;
 }
 
@@ -86,11 +87,6 @@
 
   .footer-section {
     text-align: center;
-    margin: 20px 0;
-  }
-
-  /* This block is redundant if there's no element with the class `some-class` in your footer */
-  .some-class {
-    font-size: 14px;
+    margin: 10px 0; /* Adjusted margin for better spacing on small screens */
   }
 }
