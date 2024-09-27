@@ -1,0 +1,105 @@
+/* General Styles for HomePage */
+.mainStyle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw; /* Full screen width */
+  height: 95vh; /* Full screen height */
+  overflow: hidden; /* Prevent scrollbars */
+  margin: 0; /* Remove any default margins */
+  padding: 0;
+}
+
+.mainImageStyle {
+  width: 100%; /* Full width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Cover the entire width and height without distortion */
+  margin-top: 0; /* Reset margin-top for smaller screens */
+}
+
+.sectionStyle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  width: 100%;
+  margin: 15px 0;
+}
+
+.contentStyle {
+  text-align: center;
+  width: 80%;
+  max-width: 800px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.ctaButtonStyle {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #FFBF78;
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .mainStyle {
+    height: auto; /* Adjust height for larger tablets or small screens */
+  }
+
+  .contentStyle {
+    width: 90%; /* Adjust width for tablets */
+  }
+}
+
+@media (max-width: 992px) {
+  .sectionStyle {
+    height: auto; /* Allow section height to adjust automatically */
+    padding: 10px; /* Add padding for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .mainStyle {
+    height: auto; /* Allow height to adjust on smaller screens */
+    padding: 10px; /* Add padding for smaller screens */
+  }
+
+  .mainImageStyle {
+    margin-top: 0; /* Ensure image fits properly */
+  }
+
+  .sectionStyle {
+    height: auto; /* Allow section height to adjust */
+    padding: 10px; /* Add padding for smaller screens */
+  }
+
+  .contentStyle {
+    width: 95%; /* Adjust width for smaller screens */
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  .ctaButtonStyle {
+    padding: 8px 16px; /* Adjust button padding */
+    font-size: 14px; /* Adjust font size */
+  }
+}
+
+@media (max-width: 576px) {
+  .mainStyle {
+    padding: 5px; /* Reduce padding for very small screens */
+  }
+
+  .contentStyle {
+    width: 100%; /* Full width for very small screens */
+    padding: 5px; /* Further reduce padding */
+  }
+
+  .ctaButtonStyle {
+    padding: 6px 12px; /* Adjust button padding */
+    font-size: 12px; /* Adjust font size */
+  }
+}
