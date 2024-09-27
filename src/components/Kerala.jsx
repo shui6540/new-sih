@@ -60,20 +60,35 @@ const socioEconomicDevelopmentData = [
 // Colors for the pie chart
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
-const PopulationChart = () => {
+const Kerala = () => {
   const { t } = useTranslation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  // Inline styles
+  const styles = {
+    container: {
+      textAlign: 'left', // Aligns all text to the left
+      padding: '20px', // Adds padding around the content
+    },
+    heading: {
+      margin: '20px 0', // Adds margin to headings
+    },
+  };
+
   return (
-    <div style={{ width: '80%', margin: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <h2>{t('population_distribution')}</h2>
+    <div style={styles.container}>
+      <h2 style={styles.heading}>{t('population_distribution')}</h2>
       <BarChart
         width={900}
         height={600}
-        data={data}
+        data={data.map(item => ({
+            name: t(`districts.${item.name}`),
+            males: item.males,
+            females: item.females
+        }))}
         layout="vertical"
         margin={{ top: 20, right: 30, left: 100, bottom: 20 }}
         barSize={20}
@@ -89,7 +104,7 @@ const PopulationChart = () => {
       </BarChart>
 
       {/* Pie Chart for Age Distribution */}
-      <h2>{t('age_distribution')}</h2>
+      <h2 style={styles.heading}>{t('age_distribution')}</h2>
       <PieChart width={400} height={400}>
         <Pie
           data={ageData}
@@ -109,8 +124,8 @@ const PopulationChart = () => {
       </PieChart>
 
       {/* Separate Bar Charts for Each Development Category */}
-      <h2>{t('development')}</h2>
-      <h2>{t('agriculture_development')}</h2>
+      <h2 style={styles.heading}>{t('development')}</h2>
+      <h2 style={styles.heading}>{t('agriculture_development')}</h2>
       <BarChart
         width={600}
         height={300}
@@ -127,8 +142,7 @@ const PopulationChart = () => {
         <Bar dataKey="population" fill="#ffc658" name={t('legends.population')} />
       </BarChart>
 
-      {/* Similarly add for Infrastructure, Industrial, and Socio-Economic Development */}
-      <h2>{t('infrastructure_development')}</h2>
+      <h2 style={styles.heading}>{t('infrastructure_development')}</h2>
       <BarChart
         width={600}
         height={300}
@@ -145,7 +159,7 @@ const PopulationChart = () => {
         <Bar dataKey="population" fill="#ffc658" name={t('legends.population')} />
       </BarChart>
 
-      <h2>{t('industrial_development')}</h2>
+      <h2 style={styles.heading}>{t('industrial_development')}</h2>
       <BarChart
         width={600}
         height={300}
@@ -162,7 +176,7 @@ const PopulationChart = () => {
         <Bar dataKey="population" fill="#ffc658" name={t('legends.population')} />
       </BarChart>
 
-      <h2>{t('socio_economic_development')}</h2>
+      <h2 style={styles.heading}>{t('socio_economic_development')}</h2>
       <BarChart
         width={600}
         height={300}
@@ -182,4 +196,4 @@ const PopulationChart = () => {
   );
 };
 
-export default PopulationChart;
+export default Kerala;
