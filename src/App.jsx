@@ -7,7 +7,7 @@ import Form from './components/Form';
 import PopulationChart from './components/PopulationChart';
 import './i18n';
 import AboutUs from './components/AboutUs';
-
+import LoginPage from './pages/LoginPage';
 function App() {
   return (
     <Router>
@@ -18,6 +18,7 @@ function App() {
           <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/apply" element={<Form />} />
           <Route path="/population-chart" element={<PopulationChart />} />
+           <Route path="/login" element={<LoginPage />} />
         </Routes>
        
       </div>

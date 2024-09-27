@@ -1,0 +1,141 @@
+/* Style for the entire login page container */
+.loginPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-image: url('/path/to/your/background/image.png'); /* Set your background image */
+    background-size: cover; /* Cover the entire area */
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Arial', sans-serif;
+    color: white; /* Text color */
+    padding: 20px;
+}
+
+/* Style for the login form box */
+.loginPage form {
+    padding: 40px;
+    width: 100%;
+    max-width: 400px; /* Limits the width on larger screens */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    backdrop-filter: blur(8px); /* Blur effect for background */
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap; /* Ensures fields wrap on smaller screens */
+    justify-content: space-between; /* Align fields side by side */
+    gap: 20px; /* Add space between fields */
+}
+
+/* Style for the form heading */
+.loginPage h2 {
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff; /* White text for heading */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Shadow effect */
+    text-align: center;
+}
+
+/* Input field styling */
+.inputField {
+    width: 48%; /* Adjusts fields to sit side by side */
+    text-align: left;
+}
+
+.inputField label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff; /* White label color */
+}
+
+.inputField input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.9); /* Light background */
+    transition: box-shadow 0.3s;
+}
+
+/* Focus effect on input fields */
+.inputField input:focus {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.6); /* Blue shadow on focus */
+    outline: none;
+}
+
+/* Styling for the Remember Me checkbox */
+.rememberMe {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align checkbox to the left */
+    margin: 10px 0;
+    color: #fff;
+    width: 100%; /* Full width to keep it separate from input fields */
+}
+
+.rememberMe label {
+    margin-left: 10px;
+    font-size: 0.9rem;
+}
+
+/* Sign Up button styling */
+.signUpButton {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #28a745; /* Green for sign up */
+    color: white;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.signUpButton:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Link to login */
+.loginLink {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+.loginLink a {
+    color: #f0ad4e; /* Highlight the link with orange */
+    text-decoration: none;
+}
+
+.loginLink a:hover {
+    color: #ffc107; /* Lighter orange on hover */
+}
+
+/* Add some responsiveness */
+@media (max-width: 768px) {
+    .inputField {
+        width: 100%; /* Stack fields vertically on smaller screens */
+    }
+    
+    .loginPage form {
+        max-width: 100%; /* Expand form to full width */
+    }
+}
+
+@media (max-width: 500px) {
+    .loginPage form {
+        padding: 20px;
+    }
+    
+    .loginPage h2 {
+        font-size: 1.5rem;
+    }
+}

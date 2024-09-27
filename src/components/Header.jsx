@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import '@fortawesome/fontawesome-free/css/all.min.css'; // Font Awesome for icons
 import './Header.css'; // Import CSS
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const { t, i18n } = useTranslation(); // For translations
@@ -13,12 +14,15 @@ const Header = () => {
   return (
     <header className="header">
       <nav className="header-container">
+        {/* Logo linked to Home Page */}
         <div className="logo-container">
-          <img 
-            src="./logo.png" 
-            alt={t('logo_secondary')}
-            className="right-logo"
-          />
+          <Link to="/">
+            <img 
+              src="./logo.png" 
+              alt={t('logo_secondary')} 
+              className="right-logo"
+            />
+          </Link>
         </div>
 
         {/* Centered Search Bar */}
@@ -41,9 +45,11 @@ const Header = () => {
             <span onClick={() => handleLanguageChange('hi')} className="language-option">हिंदी</span>
           </div>
 
-          <button className="sign-in-button">
-            {t('Sign In')} <i className="fas fa-arrow-right"></i>
-          </button>
+          <Link to="/login">
+            <button className="sign-in-button">
+              {t('Sign In')} <i className="fas fa-arrow-right"></i>
+            </button>
+          </Link>
         </div>
       </nav>
     </header>

@@ -45,6 +45,19 @@
 .about-us p:last-child {
   margin-bottom: 0;
 }
+.go-back-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ee9632;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.go-back-button:hover {
+  background-color: #45a049;
+}
 
 /* Media Queries */
 @media (max-width: 1024px) {
@@ -88,4 +101,5 @@
   .about-us p {
     font-size: 0.8rem; /* Further reduce font size for very small screens */
   }
+  
 }

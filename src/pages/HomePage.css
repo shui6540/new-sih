@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw; /* Full screen width */
+    width: 98.7vw; /* Full screen width */
     height: 95vh; /* Full screen height */
     overflow: hidden; /* Prevent scrollbars */
     margin: 0; /* Remove any default margins */

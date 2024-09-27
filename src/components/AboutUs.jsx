@@ -1,13 +1,20 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import './AboutUs.css';
 
 const AboutUs = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate(); // Hook for navigating to different routes
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Function to handle navigation back to home
+  const goToHomePage = () => {
+    navigate('/'); // Replace '/' with your home route if needed
+  };
 
   return (
     <div className="about-us">
@@ -37,6 +44,11 @@ const AboutUs = () => {
 
       <h2>{t('aboutUs.heading7')}</h2>
       <p>{t('aboutUs.paragraph13')}</p>
+
+      {/* Go Back to Home Page Button without translation */}
+      <button className="go-back-button" onClick={goToHomePage}>
+        Go Back to Home Page
+      </button>
     </div>
   );
 };
