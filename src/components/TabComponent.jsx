@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import './TabComponent.css'; // Import the CSS file for styles
 import CategoryGrid from './CategoryGrid'; // Import the CategoryGrid component
+import CentralMinistriesPage from './CentralMinistriesPage';
+import StatesUTsPage from './StatesUTsPage';
 
 const TabComponent = () => {
   const [activeTab, setActiveTab] = useState('states');
@@ -27,18 +29,8 @@ const TabComponent = () => {
       </div>
 
       <div className="tabContent">
-        {activeTab === 'states' && (
-          <div>
-            <h2>States and Union Territories</h2>
-            {/* You can map through your state data here */}
-          </div>
-        )}
-        {activeTab === 'ministries' && (
-          <div>
-            <h2>Central Ministries</h2>
-            {/* You can map through your ministry data here */}
-          </div>
-        )}
+        {activeTab === 'states' && <StatesUTsPage/>}
+        {activeTab === 'ministries' && <CentralMinistriesPage/>}
         {activeTab === 'categories' && <CategoryGrid />} {/* Show CategoryGrid when Categories tab is active */}
       </div>
     </div>

@@ -38,11 +38,11 @@ const HomePage = () => {
       </main>
 
       {/* Add the TabComponent here */}
-      <TabComponent />
+     
 
       <div>
         <HeroSection />
-        <CategoryGrid />
+        <TabComponent />
       </div>
 
       <div style={{ textAlign: 'center', marginTop: '0px', marginBottom: '50px' }}>

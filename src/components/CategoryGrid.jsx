@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next'; // Import useTranslation from react-i18next
+import { useTranslation } from 'react-i18next';
 import './CategoryGrid.css'; // Import the CSS file for styling
 
 const categories = [
@@ -21,28 +21,22 @@ const categories = [
 ];
 
 const CategoryGrid = () => {
-  const { t } = useTranslation(); // Get the translation function
-  const visibleCategories = categories.slice(0, 15); // Limit to 15 items for 5x3 grid
+  const { t } = useTranslation();
+  const visibleCategories = categories.slice(0, 15); // Limit to 15 items for grid
 
   return (
-    <div>
-      <h1 style={{ textAlign: 'center', marginLeft: '30px' }}>
-        {t('find_schemes_by_category')}
-      </h1>
-      <div className="container">
-        <div className="grid-container">
-          {visibleCategories.map((category, index) => (
-            <div key={index} className="category-card">
-              <div className="category-icon">{category.icon}</div>
-              <div className="category-info">
-                <h4>{t(category.name)}</h4>
-                <p>
-                  {category.schemes} {t('schemes_label')}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+    <div className="centralMinistriesPage">
+      <h1>{t('find_schemes_by_category')}</h1>
+      <div className="gridContainer">
+        {visibleCategories.map((category, index) => (
+          <div key={index} className="ministryCard">
+            <div className="category-icon">{category.icon}</div>
+            <h4>{t(category.name)}</h4>
+            <p>
+              {category.schemes} {t('schemes_label')}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   );
