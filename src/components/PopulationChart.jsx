@@ -100,7 +100,7 @@ const PopulationChart = () => {
     <div >
      
       <div className="box">
-      <h1>Select a state:</h1>
+      <h1>State:</h1>
       <label htmlFor="state-select"></label>
       <select id="state-select" value={activeState} onChange={handleChange}>
         {statesAndUTs.map((state) => (

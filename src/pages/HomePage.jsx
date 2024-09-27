@@ -42,9 +42,9 @@ const HomePage = () => {
 
       <div>
         <HeroSection />
-        <TabComponent />
+       
       </div>
-
+      <TabComponent />
       <div style={{ textAlign: 'center', marginTop: '0px', marginBottom: '50px' }}>
         <Link to="/population-chart" className="ctaButtonStyle">
           {t('view_data_statistics')}

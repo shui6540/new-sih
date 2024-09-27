@@ -64,7 +64,7 @@ const CentralMinistriesPage = () => {
           </div>
         ))}
       </div>
-      <Footer />
+     
     </div>
   );
 };
