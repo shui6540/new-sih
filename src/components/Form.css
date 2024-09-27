@@ -7,8 +7,6 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   background-color: black;
-  margin-left: 400px;
-  
 }
 
 /* Header styling */
@@ -40,7 +38,6 @@ h1 {
   color: #4caf50;
   font-weight: bold;
 }
-
 
 .form-step {
   display: flex;
@@ -89,7 +86,6 @@ h1 {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  margin-left: 100px;
 }
 
 .age-selection span {
@@ -108,19 +104,18 @@ h1 {
 /* Employment Status Section - Vertical Alignment */
 .employment-status-selection {
   display: flex;
-  flex-direction: column; /* Stack buttons vertically */
-  gap: 10px; /* Add space between buttons */
+  flex-direction: column;
+  gap: 10px;
 }
 
 .employment-status-selection button {
-  flex: 1; /* Ensure buttons take equal space */
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
   background-color: #f0f0f0;
   cursor: pointer;
   color: black;
-  width:400px;
+  width: 100%; /* Adjust to full width */
 }
 
 .employment-status-selection button.active {
@@ -135,8 +130,8 @@ h1 {
 /* Category Options - Vertical Alignment */
 .category-options {
   display: flex;
-  flex-direction: column; /* Stack category options vertically */
-  gap: 10px; /* Add space between buttons */
+  flex-direction: column;
+  gap: 10px;
 }
 
 .category-options button {
@@ -146,7 +141,7 @@ h1 {
   background-color: #f0f0f0;
   cursor: pointer;
   color: black;
-  width:400px;
+  width: 100%; /* Adjust to full width */
 }
 
 .category-options button.active {
@@ -211,4 +206,62 @@ form {
 .reset-section {
   text-align: center;
   margin-top: 20px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .progress-bar {
+    flex-direction: column;
+  }
+
+  .progress-step {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .gender-selection button,
+  .employment-status-selection button,
+  .category-options button,
+  .options button {
+    padding: 10px;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .age-selection select {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+
+  .next-button,
+  .previous-button,
+  .submit-button,
+  .reset-button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+  }
+
+  .progress-bar {
+    flex-direction: column;
+  }
+
+  .progress-step {
+    font-size: 1em;
+  }
 }
