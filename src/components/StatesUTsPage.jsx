@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from '../components/Footer';
 import './StatesUTsPage.css'; // Ensure to create this CSS file for styles
 import { Link } from 'react-router-dom';
 

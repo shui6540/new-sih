@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './CategoryGrid.css'; // Import the CSS file for styling
-
+import { Link } from 'react-router-dom';
 const categories = [
   { name: 'agriculture_rural_environment', schemes: 338, icon: '🌾' },
   { name: 'banking_financial_insurance', schemes: 172, icon: '🏦' },

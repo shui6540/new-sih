@@ -1,6 +1,6 @@
 import React from 'react';
-import Footer from '../components/Footer';
-import './CentralMinistriesPage.css'; // Ensure to create this CSS file for styles
+import './CentralMinistriesPage.css';
+import { Link } from 'react-router-dom';
 
 const ministries = [
   { name: 'Comptroller And Auditor General Of India', schemes: 2 },
@@ -58,13 +58,19 @@ const CentralMinistriesPage = () => {
       <h1>Central Ministries</h1>
       <div className="gridContainer">
         {ministries.map((ministry, index) => (
-          <div key={index} className="ministryCard">
+          <Link 
+            key={index} 
+            to={{
+              pathname: '/filter-panel',
+              state: { selectedMinistry: ministry.name }, // Pass selected ministry data via Link state
+            }} 
+            className="ministryCard"
+          >
             <h2>{ministry.name}</h2>
             <p>{`${ministry.schemes} Schemes`}</p>
-          </div>
+          </Link>
         ))}
       </div>
-     
     </div>
   );
 };

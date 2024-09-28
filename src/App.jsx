@@ -20,6 +20,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/" element={<StatesUTsPage />} />
+          <Route path="/central-ministries" component={CentralMinistriesPage} />
+          <Route path="/filter-panel/:ministryName" component={FilterPanel} />
         <Route path="/filter-panel" element={<FilterPanel />} />
           <Route path="/apply" element={<Form />} />
           <Route path="/population-chart" element={<PopulationChart />} />
