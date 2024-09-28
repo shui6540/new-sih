@@ -31,7 +31,18 @@ h1 {
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-/* Hover effect for cards */
+/* Prevent link color from changing to blue */
+.gridContainer a {
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit color from parent element */
+}
+
+/* Prevent link color change on hover */
+.gridContainer a:hover {
+  color: inherit; /* Maintain color on hover */
+}
+
+/* Hover effect for ministryCard links */
 .ministryCard:hover {
   transform: scale(1.05); /* Slight zoom on hover */
   background-color: #333; /* Darker background on hover */
@@ -50,11 +61,13 @@ h1 {
   margin: 0;
   color: #9ad3bc; /* Light green for schemes count */
 }
+
 .category-icon {
   font-size: 37px; /* Increased icon size */
   margin-bottom: 12px; /* Space between icon and text */
   color: #78E08F; /* Default icon color, matches green for consistency */
 }
+
 /* Media query for small screens */
 @media (max-width: 600px) {
   .ministryCard {

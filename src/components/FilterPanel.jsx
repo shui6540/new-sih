@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './FilterPanel.css';
-import { useParams } from 'react-router-dom';
+
 
 const FilterPanel = () => {
-    const { ministryName } = useParams();
+   
     const initialFilters = {
         state: '',
         gender: '',
