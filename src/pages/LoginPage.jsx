@@ -1,21 +1,63 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate hook
-import './LoginPage.css';
+import React, { useState } from 'react';
+import './LoginPage.css'; // Create a CSS file for styles
 
 const LoginPage = () => {
-  const [role, setRole] = useState("user"); // Default role is "user"
-  const navigate = useNavigate(); // Initialize navigate function
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [formData, setFormData] = useState({
+    username: '',
+    contactNumber: '',
+    email: '',
+    confirmEmail: '',
+    password: '',
+    confirmPassword: '',
+    rememberMe: false,
+  });
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleRoleChange = (e) => {
-    setRole(e.target.value);
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value,
+    }));
+  };
+
+  const authenticateUser = async (data) => {
+    // Implement actual authentication logic (replace with actual API calls)
+    // For now, we can simulate an API call that checks for existing users.
+    
+    // Example of a fake user database (to be replaced with actual logic)
+    const users = [
+      { username: 'user1', password: 'password123' },
+      { username: 'admin1', password: 'adminpass123' },
+    ];
+
+    const user = users.find(
+      (u) => u.username === data.username && u.password === data.password
+    );
+
+    return user !== undefined;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(`Logging in as: ${role}`);
-    
-    // After login logic, navigate to the dashboard
-    navigate("/dashboard");
+    setErrorMessage(''); // Reset error message
+
+    // Check if password and confirm password match
+    if (formData.password !== formData.confirmPassword) {
+      setErrorMessage('Passwords do not match. Please try again.');
+      return;
+    }
+
+    // Authenticate user
+    const isAuthenticated = await authenticateUser(formData);
+    if (isAuthenticated) {
+      // Success: redirect or show success message
+      alert(`Welcome ${formData.username}!`);
+      // You can implement further redirection or state updates here
+    } else {
+      setErrorMessage('Invalid credentials, please try again.');
+    }
   };
 
   return (
