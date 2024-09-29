@@ -43,6 +43,12 @@
     border-radius: 20px;
     text-decoration: none;
   }
+  .mainVideoStyle {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the entire area */
+}
+
   
   /* Media Queries */
   @media (max-width: 1200px) {
