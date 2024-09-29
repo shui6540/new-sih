@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './LoginPage.css'; // Create a CSS file for styles
 
 const LoginPage = () => {
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [role, setRole] = useState('user'); // State to track User/Admin selection
   const [formData, setFormData] = useState({
     username: '',
     contactNumber: '',
@@ -23,10 +23,7 @@ const LoginPage = () => {
   };
 
   const authenticateUser = async (data) => {
-    // Implement actual authentication logic (replace with actual API calls)
-    // For now, we can simulate an API call that checks for existing users.
-    
-    // Example of a fake user database (to be replaced with actual logic)
+    // Simulate an API call for user authentication
     const users = [
       { username: 'user1', password: 'password123' },
       { username: 'admin1', password: 'adminpass123' },
@@ -39,7 +36,7 @@ const LoginPage = () => {
     return user !== undefined;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage(''); // Reset error message
 
@@ -58,6 +55,10 @@ const LoginPage = () => {
     } else {
       setErrorMessage('Invalid credentials, please try again.');
     }
+  };
+
+  const handleRoleChange = (e) => {
+    setRole(e.target.value); // Update role based on selection
   };
 
   return (
@@ -87,13 +88,49 @@ const LoginPage = () => {
           </label>
         </div>
         <form onSubmit={handleSubmit}>
-          <input type="text" placeholder="Username" required />
-          <input type="email" placeholder="Email" required />
-          <input type="password" placeholder="Password" required />
+          <input
+            type="text"
+            name="username"
+            placeholder="Username"
+            required
+            value={formData.username}
+            onChange={handleChange}
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+            value={formData.email}
+            onChange={handleChange}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+            value={formData.password}
+            onChange={handleChange}
+          />
+          <input
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirm Password"
+            required
+            value={formData.confirmPassword}
+            onChange={handleChange}
+          />
           <div className="checkbox-container">
-            <input type="checkbox" id="remember-me" />
+            <input
+              type="checkbox"
+              name="rememberMe"
+              id="remember-me"
+              checked={formData.rememberMe}
+              onChange={handleChange}
+            />
             <label htmlFor="remember-me">Remember me</label>
           </div>
+          {errorMessage && <p className="error-message">{errorMessage}</p>} {/* Display error message */}
           <button type="submit" className="sign-up-button">Login</button>
         </form>
       </div>
