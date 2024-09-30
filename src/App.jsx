@@ -19,15 +19,15 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} /> {/* This is the Home route */}
-          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/AboutUs" element={<AboutUs />} /> {/* About Us page route */}
           <Route path="/states-uts" element={<StatesUTsPage />} />
           <Route path="/central-ministries" element={<CentralMinistriesPage />} />
           <Route path="/filter-panel/:ministryName" element={<FilterPanel />} />
           <Route path="/filter-panel" element={<FilterPanel />} />
           <Route path="/apply" element={<Form />} />
           <Route path="/population-chart" element={<PopulationChart />} />
-          <Route path="/login" element={<LoginPage />} /> {/* This is the login route */}
-          <Route path="/dashboard" element={<Dashboard />} /> {/* This is the dashboard route */}
+          <Route path="/login" element={<LoginPage />} /> {/* Login page route */}
+          <Route path="/dashboard" element={<Dashboard />} /> {/* Dashboard route */}
         </Routes>
       </div>
     </Router>

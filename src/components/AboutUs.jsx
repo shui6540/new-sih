@@ -8,12 +8,12 @@ const AboutUs = () => {
   const navigate = useNavigate(); // Hook for navigating to different routes
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0); // Scroll to the top of the page on load
   }, []);
 
   // Function to handle navigation back to home
   const goToHomePage = () => {
-    navigate('/'); // Replace '/' with your home route if needed
+    navigate('/'); // Navigate to home page
   };
 
   return (
