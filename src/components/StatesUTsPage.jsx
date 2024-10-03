@@ -1,6 +1,6 @@
 import React from 'react';
-import Footer from '../components/Footer';
 import './StatesUTsPage.css'; // Ensure to create this CSS file for styles
+import { Link } from 'react-router-dom';
 
 const statesAndUTs = [
   { name: 'Andaman and Nicobar', countUT: 18, countCentral: 468, type: 'UT' },
@@ -47,11 +47,18 @@ const StatesUTsPage = () => {
       <h1>States and Union Territories</h1>
       <div className="gridContainer">
         {statesAndUTs.map((state, index) => (
-          <div key={index} className="stateCard">
+          <Link 
+            key={index} 
+            to={{
+              pathname: '/filter-panel',
+              state: { selectedState: state.name }, // Pass selected state data via Link state
+            }} 
+            className="stateCard"
+          >
             <h2>{state.name}</h2>
             <p>{state.type === 'State' ? `${state.countState} State` : `${state.countUT} UT`}</p>
             <p>{`${state.countCentral} Central`}</p>
-          </div>
+          </Link>
         ))}
       </div>
      

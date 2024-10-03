@@ -2,7 +2,7 @@
 .statesUTsPage {
     text-align: center;
     padding: 20px;
-    background-color: #2b2b2b; /* Match background with ministries page */
+    background-color:transparent; /* Match background with ministries page */
     color: white;
 }
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import CategoryGrid from '../components/CategoryGrid';
@@ -10,17 +10,9 @@ import './HomePage.css';
 
 const HomePage = () => {
   const { t } = useTranslation();
-  const images = ['/2.png', '/4.png', '/6.png'];
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [images.length]);
+  
+  // Video source
+  const videoSource = '/slides.mp4'; // Ensure this path is correct relative to the public directory
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -30,25 +22,25 @@ const HomePage = () => {
     <div className="homePage">
       <LanguageSwitcher />
       <main className="mainStyle">
-        <img
-          src={images[currentIndex]}
-          alt={t('hero_title')}
-          className="mainImageStyle"
+        <video
+          src={videoSource} // Use the videoSource variable here
+          autoPlay
+          loop
+          muted
+          className="mainVideoStyle" // Add a custom class for styling
         />
       </main>
-
-      {/* Add the TabComponent here */}
-     
-
-      <div>
-        <HeroSection />
-       
-      </div>
-      <TabComponent />
       <div style={{ textAlign: 'center', marginTop: '0px', marginBottom: '50px' }}>
         <Link to="/population-chart" className="ctaButtonStyle">
           {t('view_data_statistics')}
         </Link>
+      </div>
+
+      {/* Add the TabComponent here */}
+      <TabComponent />
+
+      <div>
+        <HeroSection showCTAButton={true} /> {/* Show apply button in the second HeroSection */}
       </div>
 
       <Footer />
@@ -57,7 +49,7 @@ const HomePage = () => {
 };
 
 // HeroSection component
-function HeroSection() {
+function HeroSection({ showCTAButton }) {
   const { t } = useTranslation();
 
   return (
@@ -65,7 +57,11 @@ function HeroSection() {
       <div className="contentStyle">
         <h2>{t('hero_title')}</h2>
         <p>{t('hero_description')}</p>
-        <Link to="/apply" className="ctaButtonStyle">{t('cta_button_apply')}</Link>
+        {showCTAButton && ( // Conditionally render the Apply button
+          <Link to="/apply" className="ctaButtonStyle">
+            {t('cta_button_apply')}
+          </Link>
+        )}
       </div>
     </section>
   );

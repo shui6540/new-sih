@@ -1,14 +1,19 @@
-/* Header Styles */
 .header {
   width: 100%;
-  background-color: #1f1f1f; /* Dark background */
+  background-color: transparent; /* Transparent by default */
   padding: 0 20px; /* Adjusted padding for general use */
   position: fixed;
   top: 0;
+  left: 0; /* Ensure the header starts at the left edge */
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden; /* Ensure no overflow */
   box-sizing: border-box; /* Include padding in width calculations */
+  transition: background-color 0.3s ease; /* Smooth transition for background change */
+}
+
+.header.scrolled {
+  background-color:rgb(37, 36, 36); /* Blue background on scroll */
 }
 
 /* Header Container Styles */
@@ -21,6 +26,7 @@
   margin: 0 auto; /* Center the container */
   width: 100%; /* Ensure full width */
   box-sizing: border-box; /* Include padding in width calculations */
+  padding: 0; /* Remove padding to prevent unnecessary shifting */
 }
 
 /* Logo Styles */

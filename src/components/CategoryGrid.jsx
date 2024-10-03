@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './CategoryGrid.css'; // Import the CSS file for styling
+import { Link } from 'react-router-dom';
 
 const categories = [
   { name: 'agriculture_rural_environment', schemes: 338, icon: '🌾' },
@@ -29,13 +30,20 @@ const CategoryGrid = () => {
       <h1>{t('find_schemes_by_category')}</h1>
       <div className="gridContainer">
         {visibleCategories.map((category, index) => (
-          <div key={index} className="ministryCard">
+          <Link 
+            key={index} 
+            to={{
+              pathname: '/filter-panel',
+              state: { selectedCategory: category.name }, // Pass selected category data via Link state
+            }} 
+            className="ministryCard"
+          >
             <div className="category-icon">{category.icon}</div>
             <h4>{t(category.name)}</h4>
             <p>
               {category.schemes} {t('schemes_label')}
             </p>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
