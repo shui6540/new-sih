@@ -30,6 +30,16 @@ const HomePage = () => {
           className="mainVideoStyle" // Add a custom class for styling
         />
       </main>
+<<<<<<< HEAD
+=======
+
+      {/* Add the TabComponent here */}
+      <TabComponent />
+
+      <div>
+        <HeroSection />
+      </div>
+>>>>>>> 992e460a0e5218c547277fbaa824972463e30799
       <div style={{ textAlign: 'center', marginTop: '0px', marginBottom: '50px' }}>
         <Link to="/population-chart" className="ctaButtonStyle">
           {t('view_data_statistics')}

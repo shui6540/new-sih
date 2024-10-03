@@ -250,4 +250,8 @@ const FilterPanel = () => {
     );
 };
 
+<<<<<<< HEAD
 export default FilterPanel;
+=======
+export default FilterPanel;
+>>>>>>> 992e460a0e5218c547277fbaa824972463e30799

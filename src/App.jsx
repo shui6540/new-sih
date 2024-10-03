@@ -13,7 +13,6 @@ import StatesUTsPage from './components/StatesUTsPage';
 import CentralMinistriesPage from './components/CentralMinistriesPage';
 import Dashboard from './pages/Dashboard'; // Import Dashboard component
 import translateText from './services/translateText'; // Ensure translateText path is correct
-// import Chatbot from './components/Chatbot'; // Import Chatbot component
 
 function App() {
   const [translatedText, setTranslatedText] = useState('');

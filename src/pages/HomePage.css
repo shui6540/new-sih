@@ -92,11 +92,30 @@
     padding: 8px 16px; /* Adjust button padding */
     font-size: 14px; /* Adjust font size */
   }
+<<<<<<< HEAD
 }
 
 @media (max-width: 576px) {
   .mainStyle {
     padding: 5px; /* Reduce padding for very small screens */
+=======
+  .mainVideoStyle {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the entire area */
+}
+
+  
+  /* Media Queries */
+  @media (max-width: 1200px) {
+    .mainStyle {
+      height: auto; /* Adjust height for larger tablets or small screens */
+    }
+  
+    .contentStyle {
+      width: 90%; /* Adjust width for tablets */
+    }
+>>>>>>> 992e460a0e5218c547277fbaa824972463e30799
   }
 
   .contentStyle {
@@ -108,6 +127,7 @@
     padding: 6px 12px; /* Adjust button padding */
     font-size: 12px; /* Adjust font size */
   }
+<<<<<<< HEAD
 }/* General Styles for HomePage */
 .mainStyle {
   display: flex;
@@ -219,3 +239,21 @@
     font-size: 12px; /* Adjust font size */
   }
 }
+=======
+  
+  @media (max-width: 576px) {
+    .mainStyle {
+      padding: 5px; /* Reduce padding for very small screens */
+    }
+  
+    .contentStyle {
+      width: 100%; /* Full width for very small screens */
+      padding: 5px; /* Further reduce padding */
+    }
+  
+    .ctaButtonStyle {
+      padding: 6px 12px; /* Adjust button padding */
+      font-size: 12px; /* Adjust font size */
+    }
+  }
+>>>>>>> 992e460a0e5218c547277fbaa824972463e30799
