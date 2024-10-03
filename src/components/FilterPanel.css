@@ -1,5 +1,4 @@
 .filter-panel {
-<<<<<<< HEAD
   width: 250px;
   padding: 20px;
   border: 1px solid #ccc;
@@ -22,35 +21,10 @@
   display: block;
   margin-bottom: 0.5rem;
   color: white;
-=======
-    width: 250px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin-top: 20px; /* Added top margin */
-}
-
-.filter-panel h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: white;
-}
-
-.filter-group {
-    margin-bottom: 20px;
-}
-
-.filter-group label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 0.5rem;
-    color: white;
->>>>>>> 992e460a0e5218c547277fbaa824972463e30799
 }
 
 .filter-group select,
 .filter-group input[type="checkbox"] {
-<<<<<<< HEAD
   margin-right: 10px;
 }
 
@@ -81,43 +55,10 @@
   margin-right: 10px;
   width: 20px;  /* Increased width for larger checkboxes */
   height: 20px; /* Increased height for larger checkboxes */
-=======
-    margin-right: 10px;
-}
-
-.filter-group select {
-    width: 100%;
-    padding: 8px;
-    font-size: 1rem;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    color: #333;
-}
-
-.checkbox-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.checkbox-group label {
-    font-weight: normal;
-    margin-bottom: 5px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-}
-
-.checkbox-group input[type="checkbox"] {
-    margin-right: 10px;
-    width: 20px;  /* Increased width for larger checkboxes */
-    height: 20px; /* Increased height for larger checkboxes */
->>>>>>> 992e460a0e5218c547277fbaa824972463e30799
 }
 
 /* Reset Filters Button */
 .reset-filters {
-<<<<<<< HEAD
   background-color: #007bff;
   color: #fff;
   padding: 10px 15px;
@@ -130,25 +71,10 @@
 
 .reset-filters:hover {
   background-color: #0056b3;
-=======
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    width: 100%;
-}
-
-.reset-filters:hover {
-    background-color: #0056b3;
->>>>>>> 992e460a0e5218c547277fbaa824972463e30799
 }
 
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
-<<<<<<< HEAD
   .filter-panel {
       width: 80%;
   }
@@ -161,17 +87,3 @@
       font-size: 0.9rem;
   }
 }
-=======
-    .filter-panel {
-        width: 80%;
-    }
-
-    .filter-group select {
-        font-size: 0.9rem;
-    }
-
-    .reset-filters {
-        font-size: 0.9rem;
-    }
-}
->>>>>>> 992e460a0e5218c547277fbaa824972463e30799
