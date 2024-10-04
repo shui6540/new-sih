@@ -13,6 +13,7 @@ import StatesUTsPage from './components/StatesUTsPage';
 import CentralMinistriesPage from './components/CentralMinistriesPage';
 import Dashboard from './pages/Dashboard'; // Import Dashboard component
 import translateText from './services/translateText'; // Ensure translateText path is correct
+import Chatbot from './components/Chatbot'; // Import Chatbot component
 
 function App() {
   const [translatedText, setTranslatedText] = useState('');
@@ -36,20 +37,21 @@ function App() {
 
         <Routes>
           <Route path="/" element={<HomePage />} /> {/* Home route */}
-          <Route path="/about-us" element={<AboutUs />} /> {/* About Us route */}
+          <Route path="/AboutUs" element={<AboutUs />} /> {/* About Us route */}
           <Route path="/government-schemes" element={<GovernmentSchemes />} />
           <Route path="/states-uts" element={<StatesUTsPage />} />
           <Route path="/central-ministries" element={<CentralMinistriesPage />} />
           <Route path="/filter-panel/:ministryName" element={<FilterPanel />} />
-          <Route path="/filter-panel" element={<FilterPanel />} />
+          {/* <Route path="/filter-panel" element={<FilterPanel />} /> */}
           <Route path="/apply" element={<Form />} />
           <Route path="/population-chart" element={<PopulationChart />} />
           <Route path="/login" element={<LoginPage />} /> {/* Login route */}
           <Route path="/dashboard" element={<Dashboard />} /> {/* Dashboard route */}
+         
         </Routes>
 
         {/* Integrate Chatbot component */}
-        {/* <Chatbot /> */}
+        <Chatbot /> 
       </div>
     </Router>
   );
