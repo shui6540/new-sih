@@ -1,20 +1,35 @@
 /* General Styles for HomePage */
 .mainStyle {
+  position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  width: 98.7vw; /* Full screen width */
-  height: 95vh; /* Full screen height */
+  width: 100vw; /* Full screen width */
+  height: 100vh; /* Full screen height */
   overflow: hidden; /* Prevent scrollbars */
-  margin: 0; /* Remove any default margins */
+  margin: -20px; /* Remove any default margins */
   padding: 0;
 }
 
-.mainImageStyle {
-  width: 100%; /* Full width */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Cover the entire width and height without distortion */
-  margin-top: 0; /* Reset margin-top for smaller screens */
+.headerStyle {
+  width: 100%;
+  height: 10vh; /* Set the height for the header (can be fixed or percentage-based) */
+  background-color: rgba(255, 255, 255, 0.8); /* Optional background for visibility */
+  text-align: center;
+  padding: 20px;
+  z-index: 2; /* Ensure header is above the video */
+}
+
+.mainVideoStyle {
+  position: absolute;
+  /* top: 10vh;  */
+  /* Start the video just below the header */
+  left: 0;
+  width: 100%; /* Full width of the container */
+  height: calc(100vh ); /* Video takes up remaining height (100% of viewport height minus the header) */
+  object-fit: cover; /* Cover the entire area without distortion */
+  z-index: 0; /* Keep the video behind the header */
 }
 
 .sectionStyle {
@@ -24,6 +39,7 @@
   height: 250px;
   width: 100%;
   margin: 15px 0;
+  z-index: 1;
 }
 
 .contentStyle {
@@ -32,6 +48,7 @@
   max-width: 800px;
   padding: 20px;
   box-sizing: border-box;
+  z-index: 2; /* Ensure the content is above the video */
 }
 
 .ctaButtonStyle {
@@ -42,13 +59,8 @@
   color: white;
   border-radius: 20px;
   text-decoration: none;
+  z-index: 2; /* Button should also appear above the video */
 }
-.mainVideoStyle {
-  width: 100%; /* Full width */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Cover the entire area */
-}
-
 
 /* Media Queries */
 @media (max-width: 1200px) {
@@ -74,138 +86,8 @@
     padding: 10px; /* Add padding for smaller screens */
   }
 
-  .mainImageStyle {
-    margin-top: 0; /* Ensure image fits properly */
-  }
-
-  .sectionStyle {
-    height: auto; /* Allow section height to adjust */
-    padding: 10px; /* Add padding for smaller screens */
-  }
-
-  .contentStyle {
-    width: 95%; /* Adjust width for smaller screens */
-    padding: 10px; /* Reduce padding for smaller screens */
-  }
-
-  .ctaButtonStyle {
-    padding: 8px 16px; /* Adjust button padding */
-    font-size: 14px; /* Adjust font size */
-  }
-<<<<<<< HEAD
-}
-
-@media (max-width: 576px) {
-  .mainStyle {
-    padding: 5px; /* Reduce padding for very small screens */
-=======
   .mainVideoStyle {
-    width: 100%; /* Full width */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Cover the entire area */
-}
-
-  
-  /* Media Queries */
-  @media (max-width: 1200px) {
-    .mainStyle {
-      height: auto; /* Adjust height for larger tablets or small screens */
-    }
-  
-    .contentStyle {
-      width: 90%; /* Adjust width for tablets */
-    }
->>>>>>> 992e460a0e5218c547277fbaa824972463e30799
-  }
-
-  .contentStyle {
-    width: 100%; /* Full width for very small screens */
-    padding: 5px; /* Further reduce padding */
-  }
-
-  .ctaButtonStyle {
-    padding: 6px 12px; /* Adjust button padding */
-    font-size: 12px; /* Adjust font size */
-  }
-<<<<<<< HEAD
-}/* General Styles for HomePage */
-.mainStyle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 98.7vw; /* Full screen width */
-  height: 95vh; /* Full screen height */
-  overflow: hidden; /* Prevent scrollbars */
-  margin: 0; /* Remove any default margins */
-  padding: 0;
-}
-
-.mainImageStyle {
-  width: 100%; /* Full width */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Cover the entire width and height without distortion */
-  margin-top: 0; /* Reset margin-top for smaller screens */
-}
-
-.sectionStyle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 250px;
-  width: 100%;
-  margin: 15px 0;
-}
-
-.contentStyle {
-  text-align: center;
-  width: 80%;
-  max-width: 800px;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.ctaButtonStyle {
-  display: inline-block;
-  padding: 10px 20px;
-  margin-top: 20px;
-  background-color: #FFBF78;
-  color: white;
-  border-radius: 20px;
-  text-decoration: none;
-}
-
-.mainVideoStyle {
-  width: 100%; /* Full width */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Cover the entire area */
-}
-
-/* Media Queries */
-@media (max-width: 1200px) {
-  .mainStyle {
-    height: auto; /* Adjust height for larger tablets or small screens */
-  }
-
-  .contentStyle {
-    width: 90%; /* Adjust width for tablets */
-  }
-}
-
-@media (max-width: 992px) {
-  .sectionStyle {
-    height: auto; /* Allow section height to adjust automatically */
-    padding: 10px; /* Add padding for tablets */
-  }
-}
-
-@media (max-width: 768px) {
-  .mainStyle {
-    height: auto; /* Allow height to adjust on smaller screens */
-    padding: 10px; /* Add padding for smaller screens */
-  }
-
-  .mainImageStyle {
-    margin-top: 0; /* Ensure image fits properly */
+    height: auto; /* Ensure video fits properly on smaller screens */
   }
 
   .sectionStyle {
@@ -239,21 +121,3 @@
     font-size: 12px; /* Adjust font size */
   }
 }
-=======
-  
-  @media (max-width: 576px) {
-    .mainStyle {
-      padding: 5px; /* Reduce padding for very small screens */
-    }
-  
-    .contentStyle {
-      width: 100%; /* Full width for very small screens */
-      padding: 5px; /* Further reduce padding */
-    }
-  
-    .ctaButtonStyle {
-      padding: 6px 12px; /* Adjust button padding */
-      font-size: 12px; /* Adjust font size */
-    }
-  }
->>>>>>> 992e460a0e5218c547277fbaa824972463e30799
