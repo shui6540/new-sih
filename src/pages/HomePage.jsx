@@ -31,17 +31,19 @@ const HomePage = () => {
         />
       </main>
 
-      {/* Add the TabComponent here */}
-      <TabComponent />
+     
 
-      <div style={{ textAlign: 'center', marginTop: '0px', marginBottom: '50px' }}>
+      <div style={{ textAlign: 'center', marginTop: '-10px', marginBottom: '50px' }}>
         <Link to="/population-chart" className="ctaButtonStyle">
           {t('view_data_statistics')}
         </Link>
       </div>
 
+      {/* Add the TabComponent here */}
+      <TabComponent />
+
       <div>
-        <HeroSection showCTAButton={true} /> {/* Show apply button in the HeroSection */}
+        <HeroSection showCTAButton={true} /> {/* Show apply button in the second HeroSection */}
       </div>
 
       <Footer />
